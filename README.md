@@ -54,4 +54,4 @@ Se tendrán reuniones presenciales o enlinea para discutir los detalles del proy
 
 ## Sistema de gestion
 
-POR DEFINIR
+Se usará [GitHub Proyects](https://github.com/JuanSeBestia/calculator-angular-tdd/projects) para registrar los procesos del los sprints, se utilizarán lo issues de GitHub para reporat bugs
