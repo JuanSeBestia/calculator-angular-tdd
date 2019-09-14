@@ -25,3 +25,4 @@
   10. Yo como usuario quiero ver la imagen de un demonio en el momento que la calculadora tenga el valor 666
   11. Yo como usuario quiero ver la imagen de un dios en el momento que la calculadora tenga el valor 42
   12. Yo como usuario de la apliacion deseo que el fondo contenga un conepto moderno para que me sienta como usandolo y me agrade estar allí
+
