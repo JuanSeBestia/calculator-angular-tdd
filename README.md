@@ -20,7 +20,7 @@ Se basará sobre una apliacación creada en otra tecnología [JuanSeBestia/react
 
 ### Histoias de usuario
 
-POR DEFINIR
+Hisotrias y requerimientos de la apliacación [Requeriments_UserStories.md](Requeriments_UserStories.md)
 
 
 ## Sprint 2
