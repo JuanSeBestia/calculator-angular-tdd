@@ -1,16 +1,16 @@
 # calculator-angular-tdd
 
-Construyendo una aplicación usando la metodología tdd o test driven development, intentando utilizar las mejores practicas conocidas por los autores [JuanSeBestia](github.com/JuanSeBestia), [Jess casas](https://github.com/jlcasasg) 
+Construyendo una aplicación usando la metodología tdd o test driven development, intentando utilizar las mejores prácticas conocidas por los autores [JuanSeBestia](github.com/JuanSeBestia), [Jess casas](https://github.com/jlcasasg) 
 
 
 
 Se espera tener todos los mecanismos de pruebas, integración y despliegue con CI/CD
 
-* La documentación que no requiera grafico se realizará en .md dentro de esté git
+* La documentación que no requiera gráfico se realizará en .md dentro de este git
 
 ## Sprint 1
 
-En el sprint 1 se prentendrá tener en producción la aplicación en alguna nube en produccion.
+En el sprint 1 se prentendrá tener en producción la aplicación en alguna nube en producción.
 
 ### Acerca del producto
 
