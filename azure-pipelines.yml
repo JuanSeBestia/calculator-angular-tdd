@@ -25,6 +25,7 @@ stages:
         inputs:
           checkLatest: true
       - script: echo Building! $(NODE_VERSION)
+      - bash: ls
       - bash: npm ci
   - stage: Test
     jobs:
