@@ -1,57 +1,53 @@
 # calculator-angular-tdd
 
-Construyendo una aplicación usando la metodología tdd o test driven development, intentando utilizar las mejores prácticas conocidas por los autores [JuanSeBestia](github.com/JuanSeBestia), [Jess casas](https://github.com/jlcasasg) 
+Builiding a app using the metology tdd or test driven development, We have used the best practice that thea autors know ([JuanSeBestia](github.com/JuanSeBestia), [Jess casas](https://github.com/jlcasasg))
 
+We espect have all mecanisme related of continuos integration and continus delivey CI/CD
 
-
-Se espera tener todos los mecanismos de pruebas, integración y despliegue con CI/CD
-
-* La documentación que no requiera gráfico se realizará en .md dentro de este git
+* The domcuntation that not require grahps would made wit MarckDown inside for this git. 
 
 ## Sprint 1
 
-En el sprint 1 se prentendrá tener en producción la aplicación en alguna nube en producción.
+In sprint 1 we will pretend to have a production app inside a one cloud.
 
-### Acerca del producto
+### About the project
 
-Es un aplicación web con la funcionalidad de calculadora, dentro de las funciones de la calculadora se incluyen las operaciones de multiplicar, dividir, sumar, restar y tambien soportará operaciones con decimales.
-
-Se basará sobre una apliacación creada en otra tecnología [JuanSeBestia/react-calculator](https://github.com/JuanSeBestia/react-calculator), diponible en linea aquí FALTA_LINK
+This proyect is inspired in other proyect maded in other framework [JuanSeBestia/react-calculator](https://github.com/JuanSeBestia/react-calculator), see the onlie demo in [DEMO REACT CALCULATOR](https://juansebestia-react-calculator.firebaseapp.com/)
 
 ### Histoias de usuario
 
-Hisotrias y requerimientos de la apliacación [Requeriments_UserStories.md](Requeriments_UserStories.md)
+Histories and requirements of this app: [Requeriments_UserStories.md](wiki/Requeriments_UserStories.md)
 
 
 ## Sprint 2
 
-En el sprint 2 se presntará el mismo producto pero con una funcionalidad adicional de un back, ambos viviendo en la nube.
+In sprint 2 we add a one functionaly of the same producto, the new functionality would have had a backend service. The FrontEnd and Backend will coexist in the seame cloud.
 
+## About of tecnologies
 
-## Acerca de las tenologías
+We will use tecnologies wich autors have the oportunities to learn, We use the strategy of git called Git Feture Branch.
 
-Se emplearán tecnolgías en los que los autores oportunidades de aprender, se utilizará la estrategia de git Feature Branch
+### Development
 
-### Desarrollo
+[Jess casas](https://github.com/jlcasasg) is encarged of development, she especifed the tecnology to depelopment this app is Angular & Ionic
 
-[Jess casas](https://github.com/jlcasasg) encargada del desarrollo a especificado utilizar Angular & Ionic para desarrollar la aplicación
+#### Development: Unit test
 
-#### Desarrollo: Pruebas Unitarias
-
-[Jess casas](https://github.com/jlcasasg) POR DEFINIR
+[Jess casas](https://github.com/jlcasasg) would have used Jest and Enzyme
 
 ### Despliegue
 
-[JuanSeBestia](github.com/JuanSeBestia) Utilizará los servicios de Azure, PENDIENTE POR DEFINIR LOS SERVICIOS ESPECIFICOS
+[JuanSeBestia](github.com/JuanSeBestia) would use the Azure Services (PENDENT TO DEFINE)
 
 ### CI/CD
 
-[JuanSeBestia](github.com/JuanSeBestia) PENDIENTE POR DEFINIR
+[JuanSeBestia](github.com/JuanSeBestia) (PENDENT TO DEFINE)
 
-## Gestion del proyecto
+## Project managnament
 
-Se tendrán reuniones presenciales o enlinea para discutir los detalles del proyecto, Actuando [JuanSeBestia](github.com/JuanSeBestia) como Product Owner y [Jess casas](https://github.com/jlcasasg) Lider Tecnino y Desarrollador
+The autors will have met in cafe, transport public or Google Meet to discut topics arround if proyect, 
+Se tendrán reuniones presenciales o enlinea para discutir los detalles del proyecto, Acting [JuanSeBestia](github.com/JuanSeBestia) as a Product Owner and [Jess casas](https://github.com/jlcasasg) as a Lead Tech and Developer
 
-## Sistema de gestion
+## Management system
 
-Se usará [GitHub Proyects](https://github.com/JuanSeBestia/calculator-angular-tdd/projects) con `Automated Kanban with reviews` para registrar los procesos del los sprints, se utilizarán lo issues de GitHub para reporat bugs
+We going to use [GitHub Proyects](https://github.com/JuanSeBestia/calculator-angular-tdd/projects) with `Automated Kanban with reviews` to register all process inside of sprint, we use the issues of GitHub to reports bugs and new functionalities.
