@@ -1,0 +1,45 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+trigger:
+  - master
+  - develop
+  - feature/*
+
+variables:
+  NODE_VERSION: 8
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    jobs:
+    - job: BuildJob
+      steps:
+      - script: echo Building!
+      - task: NodeTool@0 
+        inputs:
+          versionSpec: $(NODE_VERSION)
+      
+      - bash: npm ci
+  - stage: Test
+    jobs:
+    - job: Test_Lint
+      steps:
+      - script: echo Testing on Lint!
+    - job: Test_Unit
+      steps:
+      - script: echo Testing on Unit!
+    - job: Test_E2E
+      steps:
+      - script: echo Testing on E2E!
+  - stage: Deploy
+    jobs:
+    - job: Deploy
+      steps:
+      - script: echo Deploying the code!
