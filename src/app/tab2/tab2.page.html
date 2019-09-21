@@ -1,9 +1,17 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Calculator
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8">
+        <app-display currentValue="{{displayValue}}"></app-display>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
