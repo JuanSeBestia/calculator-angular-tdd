@@ -21,11 +21,10 @@ stages:
     jobs:
     - job: BuildJob
       steps:
-      - script: echo Building!
-      - task: NodeTool@0 
+      - task: UseNode@1
         inputs:
-          versionSpec: $(NODE_VERSION)
-      
+          checkLatest: true
+      - script: echo Building! $(NODE_VERSION)
       - bash: npm ci
   - stage: Test
     jobs:
