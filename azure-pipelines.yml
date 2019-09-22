@@ -29,6 +29,7 @@ stages:
       - bash: npm ci
   - stage: Test
     jobs:
+    - template: azure/templates/install_packages.yml  # Template of build
     - job: Test_Lint
       steps:
       - script: echo Testing on Lint!
