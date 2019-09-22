@@ -1,7 +1,7 @@
 # Requeriments & User Stories of calculator-angular-tdd
 ## Sprint 1
 
-### 1. Funcional requirements 
+### 1. Functional Requirements
 
   1. The user must be able to use a calculator with the functionalities of the operations of multiplying, dividing, adding, subtracting.
 
