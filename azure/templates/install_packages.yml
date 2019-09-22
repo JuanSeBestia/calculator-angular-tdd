@@ -1,4 +1,2 @@
-jobs:
-- job: Build
-  steps:
-  - script: npm install
+steps:
+  - script: npm ci

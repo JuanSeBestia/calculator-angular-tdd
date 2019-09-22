@@ -25,18 +25,21 @@ stages:
         inputs:
           version: '$(NODE_VERSION).x'
       - script: echo Building! $(NODE_VERSION)
-      - bash: npm ci
+      - template: azure/templates/install_packages.yml  # Template of build
+      - bash: npm run build
   - stage: Test
     jobs:
-    - template: azure/templates/install_packages.yml  # Template of build
     - job: Test_Lint
       steps:
+      - template: azure/templates/install_packages.yml  # Template of build
       - script: npm run check-lint
     - job: Test_Unit
       steps:
+      - template: azure/templates/install_packages.yml  # Template of build
       - script: npm run test
     - job: Test_E2E
       steps:
+      - template: azure/templates/install_packages.yml  # Template of build
       - script: npm run e2e
   - stage: Deploy
     jobs:
