@@ -11,7 +11,7 @@ trigger:
   - feature/*
 
 variables:
-  NODE_VERSION: 8
+  NODE_VERSION: 10
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -23,22 +23,21 @@ stages:
       steps:
       - task: UseNode@1
         inputs:
-          checkLatest: true
+          version: '$(NODE_VERSION).x'
       - script: echo Building! $(NODE_VERSION)
-      - bash: ls
       - bash: npm ci
   - stage: Test
     jobs:
     - template: azure/templates/install_packages.yml  # Template of build
     - job: Test_Lint
       steps:
-      - script: echo Testing on Lint!
+      - script: npm run check-lint
     - job: Test_Unit
       steps:
-      - script: echo Testing on Unit!
+      - script: npm run test
     - job: Test_E2E
       steps:
-      - script: echo Testing on E2E!
+      - script: npm run e2e
   - stage: Deploy
     jobs:
     - job: Deploy
