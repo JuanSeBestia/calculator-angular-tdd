@@ -23,7 +23,7 @@ stages:
       steps:
       - task: UseNode@1
         inputs:
-          version: '$NODE_VERSION.x'
+          version: '$(NODE_VERSION).x'
       - script: echo Building! $(NODE_VERSION)
       - bash: npm ci
   - stage: Test
