@@ -11,7 +11,7 @@ trigger:
   - feature/*
 
 variables:
-  NODE_VERSION: 10
+  buildConfiguration: 'Release'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -21,9 +21,16 @@ stages:
     jobs:
     - job: BuildJob
       steps:
-      - script: echo Building! $(NODE_VERSION)
-      - template: azure/templates/install_packages.yml  # Template of build
-      - bash: npm run build
+      - task: Npm@1
+        displayName: 'npm install'
+        inputs:
+          command: 'ci'
+      - task: Npm@1
+        displayName: 'Build proyect'
+        inputs:
+          command: custom
+          customCommand: run build -- --prod
+      
   - stage: Test
     jobs:
     - job: Test_Lint
