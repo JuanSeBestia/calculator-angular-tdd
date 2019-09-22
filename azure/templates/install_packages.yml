@@ -1,2 +1,6 @@
 steps:
-  - script: npm ci
+  - task: Npm@1
+        displayName: 'npm install'
+        inputs:
+          command: 'ci'
+      

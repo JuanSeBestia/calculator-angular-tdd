@@ -21,30 +21,43 @@ stages:
     jobs:
     - job: BuildJob
       steps:
-      - task: Npm@1
-        displayName: 'npm install'
-        inputs:
-          command: 'ci'
+      - template: azure/templates/install_packages.yml  # Template of build
       - task: Npm@1
         displayName: 'Build proyect'
         inputs:
           command: custom
           customCommand: run build -- --prod
+      # - task: PublishPipelineArtifact@0
+      #   inputs:
+      #     artifactName: 'calculator-tdd-anuglar'
+      #     targetPath: 'dist'
       
   - stage: Test
     jobs:
     - job: Test_Lint
       steps:
-      - template: azure/templates/install_packages.yml  # Template of build
-      - script: npm run check-lint
+      - task: Npm@1
+        displayName: 'Checkl lint'
+        inputs:
+          command: custom
+          customCommand: run check-lint
     - job: Test_Unit
       steps:
       - template: azure/templates/install_packages.yml  # Template of build
-      - script: npm run test
+      - task: Npm@1
+        displayName: 'Run Unit Tests'
+        inputs:
+          command: custom
+          customCommand: run test
     - job: Test_E2E
       steps:
       - template: azure/templates/install_packages.yml  # Template of build
-      - script: npm run e2e
+      # - task: Npm@1
+      #   displayName: 'Run Unit Tests'
+      #   inputs:
+      #     command: custom
+      #     customCommand: run e2e
+      # - script: npm run e2e
   - stage: Deploy
     jobs:
     - job: Deploy
