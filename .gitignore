@@ -25,6 +25,7 @@ npm-debug.log*
 /.vscode
 /coverage
 /junit
+e2e/junit
 /dist
 /node_modules
 /platforms
