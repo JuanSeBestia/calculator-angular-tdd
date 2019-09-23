@@ -27,10 +27,15 @@ stages:
         inputs:
           command: custom
           customCommand: run build -- --prod
+
       - task: PublishPipelineArtifact@0
         inputs:
           artifactName: 'calculator-tdd-anuglar'
           targetPath: 'www'
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: 'WWW'
+          ArtifactName: calculator-tdd-anuglar-2
       
   - stage: Test
     jobs:
@@ -65,7 +70,7 @@ stages:
         displayName: 'Publish Angular test results'
         condition: succeededOrFailed()
         inputs:
-          searchFolder: $(System.DefaultWorkingDirectory)/src/angular7/junit
+          searchFolder: $(System.DefaultWorkingDirectory)/junit
           testRunTitle: Angular
           testResultsFormat: JUnit
           testResultsFiles: "**/TESTS*.xml"
@@ -73,7 +78,7 @@ stages:
       - task: DeleteFiles@1
         displayName: 'Delete JUnit files'
         inputs:
-          SourceFolder: src/angular7/junit
+          SourceFolder: junit
           Contents: 'TESTS*.xml'
 
 
