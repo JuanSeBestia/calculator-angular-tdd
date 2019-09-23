@@ -49,6 +49,13 @@ stages:
           customCommand: run check-lint
     - job: Test_Unit
       steps:
+      # Clean cache
+      - task: DeleteFiles@1
+          displayName: 'Delete JUnit files'
+          inputs:
+            SourceFolder: junit
+            Contents: 'TESTS*.xml'
+
       - template: azure/templates/install_packages.yml  # Template of build
       - task: Npm@1
         displayName: 'Test Angular'
@@ -75,22 +82,25 @@ stages:
           testResultsFormat: JUnit
           testResultsFiles: "**/TESTS*.xml"
       
-      - task: DeleteFiles@1
-        displayName: 'Delete JUnit files'
-        inputs:
-          SourceFolder: junit
-          Contents: 'TESTS*.xml'
 
 
     - job: Test_E2E
       steps:
       - template: azure/templates/install_packages.yml  # Template of build
-      # - task: Npm@1
-      #   displayName: 'Run Unit Tests'
-      #   inputs:
-      #     command: custom
-      #     customCommand: run e2e
-      # - script: npm run e2e
+      - task: Npm@1
+        displayName: 'Run Unit Tests'
+        inputs:
+          command: custom
+          customCommand: run e2e
+
+      - task: PublishTestResults@2
+        displayName: 'Publish Angular E2E test results'
+        condition: succeededOrFailed()
+        inputs:
+          searchFolder: $(System.DefaultWorkingDirectory)/src/angular7/e2e/junit
+          testRunTitle: Angular_E2E
+          testResultsFormat: JUnit
+          testResultsFiles: "**/junit*.xml"
   - stage: Deploy
     jobs:
     - job: Deploy
