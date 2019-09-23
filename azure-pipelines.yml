@@ -51,10 +51,10 @@ stages:
       steps:
       # Clean cache
       - task: DeleteFiles@1
-          displayName: 'Delete JUnit files'
-          inputs:
-            SourceFolder: junit
-            Contents: 'TESTS*.xml'
+        displayName: 'Delete JUnit files'
+        inputs:
+          SourceFolder: junit
+          Contents: 'TESTS*.xml'
 
       - template: azure/templates/install_packages.yml  # Template of build
       - task: Npm@1
