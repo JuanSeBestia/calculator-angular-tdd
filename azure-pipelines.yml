@@ -34,7 +34,7 @@ stages:
           targetPath: 'www'
       - task: PublishBuildArtifacts@1
         inputs:
-          PathtoPublish: 'WWW'
+          PathtoPublish: 'www'
           ArtifactName: calculator-tdd-anuglar-2
       
   - stage: Test
