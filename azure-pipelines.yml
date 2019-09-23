@@ -30,7 +30,7 @@ stages:
       - task: PublishPipelineArtifact@0
         inputs:
           artifactName: 'calculator-tdd-anuglar'
-          targetPath: 'dist'
+          targetPath: 'www'
       
   - stage: Test
     jobs:
