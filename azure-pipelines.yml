@@ -36,6 +36,7 @@ stages:
     jobs:
     - job: Test_Lint
       steps:
+      - template: azure/templates/install_packages.yml  # Template of build
       - task: Npm@1
         displayName: 'Checkl lint'
         inputs:
