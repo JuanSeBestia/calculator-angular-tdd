@@ -81,8 +81,6 @@ stages:
           testRunTitle: Angular
           testResultsFormat: JUnit
           testResultsFiles: "**/TESTS*.xml"
-      
-
 
     - job: Test_E2E
       steps:
@@ -97,10 +95,11 @@ stages:
         displayName: 'Publish Angular E2E test results'
         condition: succeededOrFailed()
         inputs:
-          searchFolder: $(System.DefaultWorkingDirectory)/src/angular7/e2e/junit
+          searchFolder: $(System.DefaultWorkingDirectory)/e2e/junit
           testRunTitle: Angular_E2E
           testResultsFormat: JUnit
           testResultsFiles: "**/junit*.xml"
+  
   - stage: Deploy
     jobs:
     - job: Deploy
