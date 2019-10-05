@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { Tab2Page } from './tab2.page';
+import { DisplayComponent } from '../components/display/display.component';
 
 describe('Tab2Page', () => {
   let component: Tab2Page;
@@ -9,7 +10,7 @@ describe('Tab2Page', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Tab2Page],
+      declarations: [Tab2Page, DisplayComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
@@ -19,6 +20,7 @@ describe('Tab2Page', () => {
   }));
 
   it('should create', () => {
+    
     expect(component).toBeTruthy();
   });
 });
