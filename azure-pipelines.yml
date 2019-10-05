@@ -44,7 +44,7 @@ stages:
           ArtifactName: calculator-tdd-anuglar-2
       - task: ArchiveFiles@2
         inputs:
-          rootFolderOrFile: '$(Build.BinariesDirectory)/www'
+          rootFolderOrFile: 'www'
           includeRootFolder: true
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
