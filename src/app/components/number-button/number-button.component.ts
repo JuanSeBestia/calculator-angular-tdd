@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-number-button',
@@ -9,6 +10,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NumberButtonComponent implements OnInit {
   
   @Input() value: string;
+  @Input() color: string = 'eee';
+
+  @Output('change')
+  numberClick = new EventEmitter<string>();
 
   constructor() {
   }
@@ -20,7 +25,7 @@ export class NumberButtonComponent implements OnInit {
 
 
   validateInput() {
-    let validInputs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+    let validInputs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'x', '-', '+', '/', '.'];
     if (validInputs.findIndex(item => item === this.value) != -1) {
       this.value = this.value;
     }
@@ -30,6 +35,6 @@ export class NumberButtonComponent implements OnInit {
   }
 
   clickEvent() {
-
+    this.numberClick.emit(this.value);
   }
 }

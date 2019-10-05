@@ -4,12 +4,15 @@
     background: #366666;
 }
 .displayValue{
-    text-align: left;
+    text-align: right;
     color: #ffffff;
     width: 90%;
     margin: auto;
-    text-align: end;
     font-weight: 600;
     position: absolute;
     top: 40%;
+    direction: rtl;
+    text-overflow: ellipsis;
+    max-height: 33px;
+    white-space: nowrap;
 }
