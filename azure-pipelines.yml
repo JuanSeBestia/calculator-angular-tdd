@@ -39,28 +39,6 @@ stages:
           artifactName: 'calculator-tdd-anuglar'
           targetPath: 'www'
   
-  - stage: Deploy
-    jobs:
-    - job: Deploy
-      steps:
-      - template: azure/templates/install_packages.yml  # Template of build
-      - task: Npm@1
-        displayName: 'Build proyect'
-        inputs:
-          command: custom
-          customCommand: run build -- --prod
-
-      - script: echo Deploying the code!
-      - script: ls -la
-      - task: AzureRmWebAppDeployment@4
-        inputs:
-          ConnectionType: 'AzureRM'
-          azureSubscription: 'Free Trial (d16b719c-bd80-45e5-9ccb-c293ea353639)'
-          appType: 'webAppLinux'
-          WebAppName: 'JuanSeBestiaCalculatorTDD'
-          packageForLinux: '$(System.DefaultWorkingDirectory)/www'
-          RuntimeStack: 'PHP|7.0'
-
   - stage: Test
     jobs:
     - job: Test_Lint
@@ -124,5 +102,26 @@ stages:
           testResultsFormat: JUnit
           testResultsFiles: "**/junit*.xml"
   
-  
+  - stage: Deploy
+    jobs:
+    - job: Deploy
+      steps:
+      - template: azure/templates/install_packages.yml  # Template of build
+      - task: Npm@1
+        displayName: 'Build proyect'
+        inputs:
+          command: custom
+          customCommand: run build -- --prod
+
+      - script: echo Deploying the code!
+      - script: ls -la
+      - task: AzureRmWebAppDeployment@4
+        inputs:
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'Free Trial (d16b719c-bd80-45e5-9ccb-c293ea353639)'
+          appType: 'webAppLinux'
+          WebAppName: 'JuanSeBestiaCalculatorTDD'
+          packageForLinux: '$(System.DefaultWorkingDirectory)/www'
+          RuntimeStack: 'PHP|7.0'
+
       
