@@ -49,6 +49,10 @@ stages:
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
           replaceExistingArchive: true
+      - task: PublishPipelineArtifact@0
+        inputs:
+          artifactName: '$(Build.BuildId).zip'
+          targetPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
       
   - stage: Test
     jobs:
