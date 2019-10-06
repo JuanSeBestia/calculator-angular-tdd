@@ -1,1 +1,3 @@
-<button (click)="clickEvent()"><div class="number-button">{{ value }}</div></button>
+<button [ngStyle]="{'background': color}" (click)="clickEvent()">
+    <div class="number-button">{{ value }}</div>
+</button>

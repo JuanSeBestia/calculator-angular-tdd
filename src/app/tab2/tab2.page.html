@@ -7,43 +7,66 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid class="grid-width">
     <ion-row class="ion-justify-content-center">
       <ion-col size="12">
         <app-display currentValue="{{displayValue}}"></app-display>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="4">
-        <app-number-button value="1"></app-number-button>
+      <ion-col size="3">
+        <app-number-button value="7" (change)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
-      <ion-col size="4">
-        <app-number-button value="2"></app-number-button>
+      <ion-col size="3">
+        <app-number-button value="8" (change)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
-      <ion-col size="4">
-        <app-number-button value="3"></app-number-button>
+      <ion-col size="3">
+        <app-number-button value="9" (change)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="4">
-        <app-number-button value="4"></app-number-button>
-      </ion-col>
-      <ion-col size="4">
-        <app-number-button value="5"></app-number-button>
-      </ion-col>
-      <ion-col size="4">
-        <app-number-button value="6"></app-number-button>
+      <ion-col size="3">
+        <app-number-button value="x" [color]="'#f1b76c'" (change)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="4">
-        <app-number-button value="7"></app-number-button>
+      <ion-col size="3">
+        <app-number-button value="4" (change)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
-      <ion-col size="4">
-        <app-number-button value="8"></app-number-button>
+      <ion-col size="3">
+        <app-number-button value="5" (change)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
-      <ion-col size="4">
-        <app-number-button value="9"></app-number-button>
+      <ion-col size="3">
+        <app-number-button value="6" (change)="updateDisplayValue($event)"></app-number-button>
+      </ion-col>
+      <ion-col size="3">
+        <app-number-button value="-" [color]="'#f1b76c'" (change)="updateDisplayValue($event)"></app-number-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <app-number-button value="1" (change)="updateDisplayValue($event)"></app-number-button>
+      </ion-col>
+      <ion-col size="3">
+        <app-number-button value="2" (change)="updateDisplayValue($event)"></app-number-button>
+      </ion-col>
+      <ion-col size="3">
+        <app-number-button value="3" (change)="updateDisplayValue($event)"></app-number-button>
+      </ion-col>
+      <ion-col size="3">
+        <app-number-button value="+" [color]="'#f1b76c'" (change)="updateDisplayValue($event)"></app-number-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <app-number-button value="0" (change)="updateDisplayValue($event)"></app-number-button>
+      </ion-col>
+      <ion-col size="3">
+        <app-number-button value="." (change)="updateDisplayValue($event)"></app-number-button>
+      </ion-col>
+      <ion-col size="3">
+        <app-number-button value="=" (change)="updateDisplayValue($event)"></app-number-button>
+      </ion-col>
+      <ion-col size="3">
+        <app-number-button value="/" [color]="'#f1b76c'" (change)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
     </ion-row>
   </ion-grid>
