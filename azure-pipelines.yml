@@ -43,6 +43,13 @@ stages:
     jobs:
     - job: Deploy
       steps:
+      - template: azure/templates/install_packages.yml  # Template of build
+      - task: Npm@1
+        displayName: 'Build proyect'
+        inputs:
+          command: custom
+          customCommand: run build -- --prod
+
       - script: echo Deploying the code!
       - script: ls -la
       - task: AzureRmWebAppDeployment@4
