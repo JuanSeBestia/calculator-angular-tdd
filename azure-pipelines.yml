@@ -38,22 +38,22 @@ stages:
         inputs:
           artifactName: 'calculator-tdd-anuglar'
           targetPath: 'www'
-      - task: PublishBuildArtifacts@1
+  
+  - stage: Deploy
+    jobs:
+    - job: Deploy
+      steps:
+      - script: echo Deploying the code!
+      - script: ls -la
+      - task: AzureRmWebAppDeployment@4
         inputs:
-          PathtoPublish: 'www'
-          ArtifactName: calculator-tdd-anuglar-2
-      - task: ArchiveFiles@2
-        inputs:
-          rootFolderOrFile: 'www'
-          includeRootFolder: true
-          archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-          replaceExistingArchive: true
-      - task: PublishPipelineArtifact@0
-        inputs:
-          artifactName: '$(Build.BuildId).zip'
-          targetPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-      
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'Free Trial (d16b719c-bd80-45e5-9ccb-c293ea353639)'
+          appType: 'webAppLinux'
+          WebAppName: 'JuanSeBestiaCalculatorTDD'
+          packageForLinux: '$(System.DefaultWorkingDirectory)/www'
+          RuntimeStack: 'PHP|7.0'
+
   - stage: Test
     jobs:
     - job: Test_Lint
@@ -117,8 +117,5 @@ stages:
           testResultsFormat: JUnit
           testResultsFiles: "**/junit*.xml"
   
-  - stage: Deploy
-    jobs:
-    - job: Deploy
-      steps:
-      - script: echo Deploying the code!
+  
+      
