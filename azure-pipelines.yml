@@ -33,11 +33,6 @@ stages:
         inputs:
           command: custom
           customCommand: run build -- --prod
-
-      - task: PublishPipelineArtifact@0
-        inputs:
-          artifactName: 'calculator-tdd-anuglar'
-          targetPath: 'www'
   
   - stage: Test
     jobs:
@@ -112,6 +107,11 @@ stages:
         inputs:
           command: custom
           customCommand: run build -- --prod
+      
+      - task: PublishPipelineArtifact@0
+        inputs:
+          artifactName: 'calculator-tdd-anuglar'
+          targetPath: 'www'
 
       - script: echo Deploying the code!
       - script: ls -la
