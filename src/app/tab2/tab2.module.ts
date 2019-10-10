@@ -16,7 +16,7 @@ import { NumberButtonComponent } from '../components/number-button/number-button
   ],
   declarations: [
     Tab2Page,
-    DisplayComponent, 
+    DisplayComponent,
     NumberButtonComponent,
   ]
 })

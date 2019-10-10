@@ -22,7 +22,7 @@ describe('Tab2Page', () => {
   }));
 
   it('should create', () => {
-    
+
     expect(component).toBeTruthy();
   });
 });
