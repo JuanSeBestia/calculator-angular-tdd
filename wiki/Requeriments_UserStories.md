@@ -19,7 +19,7 @@
 
   2. The application must at least look the same or more modern than the example given
 
-### 3. Historias de usuario
+### 3. User histories
   1. I as a user want to see the value that the calculator currently has, to know the result of my options
     
       1. The initial value is "0"
@@ -44,6 +44,6 @@
 
   11. I as a user want to see the image of a god at the time the calculator has the value 42
 
-  12. I as the user of the application, wish that the fund contains a modern connection so that I feel like using it and I am pleased to be there
+  12. I as the user of the application, wish that the background contains a modern concept so that I feel like using it and I am pleased to be there
 
   13. I as the user when error is happend, I want to see the error inside the display and the erro is would be errased when tap some button. When tap some button in the display would be the previous value after the error
