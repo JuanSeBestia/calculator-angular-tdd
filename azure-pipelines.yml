@@ -82,7 +82,7 @@ stages:
     - job: Test_E2E
       steps:
       - template: azure/templates/install_packages.yml  # Template of build
-      - script: ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=77.0.3865.75
+      - script: ./node_modules/protractor/bin/webdriver-manager update
       - task: Npm@1
         displayName: 'Run E2E Tests'
         inputs:
