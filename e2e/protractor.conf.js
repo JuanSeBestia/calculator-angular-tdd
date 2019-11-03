@@ -12,7 +12,7 @@ exports.config = {
     'browserName': 'chrome',
 
     chromeOptions: {
-      args: ["--headless", "--disable-gpu", "--window-size=1200,900"],
+      args: ["--headless", "--disable-gpu", "--window-size=1200,900", '--no-sandbox'],
       binary: process.env.CHROME_BIN
     }
   },
