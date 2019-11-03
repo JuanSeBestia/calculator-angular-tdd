@@ -25,7 +25,7 @@ export class NumberButtonComponent implements OnInit {
 
 
   validateInput() {
-    const validInputs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'x', '-', '+', '/', '.'];
+    const validInputs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '*', '-', '+', '/', '.'];
     if (validInputs.findIndex(item => item === this.value) !== -1) {
       this.value = this.value;
     } else {

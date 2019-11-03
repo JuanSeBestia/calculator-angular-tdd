@@ -24,7 +24,7 @@
         <app-number-button value="9" (numberClick)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
       <ion-col size="3">
-        <app-number-button value="x" [color]="'#f1b76c'" (numberClick)="updateDisplayValue($event)"></app-number-button>
+        <app-number-button value="*" [color]="'#f1b76c'" (numberClick)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -63,7 +63,7 @@
         <app-number-button value="." (numberClick)="updateDisplayValue($event)"></app-number-button>
       </ion-col>
       <ion-col size="3">
-        <app-number-button value="=" (numberClick)="updateDisplayValue($event)"></app-number-button>
+        <app-result-btn [color]="'#f1b76c'" (click)="displayResult()"></app-result-btn>
       </ion-col>
       <ion-col size="3">
         <app-number-button value="/" [color]="'#f1b76c'" (numberClick)="updateDisplayValue($event)"></app-number-button>
