@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 import { DisplayComponent } from '../components/display/display.component';
 import { NumberButtonComponent } from '../components/number-button/number-button.component';
+import { ResultBtnComponent } from '../components/result-btn/result-btn.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { NumberButtonComponent } from '../components/number-button/number-button
     Tab2Page,
     DisplayComponent,
     NumberButtonComponent,
+    ResultBtnComponent,
   ]
 })
 export class Tab2PageModule {}

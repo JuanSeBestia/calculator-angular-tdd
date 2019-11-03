@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { Tab2Page } from './tab2.page';
 import { DisplayComponent } from '../components/display/display.component';
 import { NumberButtonComponent } from '../components/number-button/number-button.component';
+import { ResultBtnComponent } from '../components/result-btn/result-btn.component';
 
 
 describe('Tab2Page', () => {
@@ -12,7 +13,7 @@ describe('Tab2Page', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Tab2Page, DisplayComponent, NumberButtonComponent, ],
+      declarations: [Tab2Page, DisplayComponent, NumberButtonComponent, ResultBtnComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
