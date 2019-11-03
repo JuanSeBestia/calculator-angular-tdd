@@ -83,7 +83,7 @@ stages:
       steps:
       - template: azure/templates/install_packages.yml  # Template of build
       - script: ./node_modules/protractor/bin/webdriver-manager update
-      - script: "I surrender for protactor and ChromeDriver"
+      - script: "echo I surrender for protactor and ChromeDriver"
       # - task: Npm@1
       #   displayName: 'Run E2E Tests'
       #   inputs:
