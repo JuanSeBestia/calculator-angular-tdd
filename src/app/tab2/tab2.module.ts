@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 import { DisplayComponent } from '../components/display/display.component';
+import { NumberButtonComponent } from '../components/number-button/number-button.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,8 @@ import { DisplayComponent } from '../components/display/display.component';
   ],
   declarations: [
     Tab2Page,
-    DisplayComponent, ]
+    DisplayComponent,
+    NumberButtonComponent,
+  ]
 })
 export class Tab2PageModule {}

@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
   displayValue: string;
+  validInput = '^((\-)?(\d+\.?\d*)+([\+\-x\/]{1}(\d+\.?\d*)*)*)+';
 
   constructor() {
     this.displayValue = '0';
   }
 
+  updateDisplayValue(displayValue: string) {
+    this.displayValue += displayValue;
+  }
 }
