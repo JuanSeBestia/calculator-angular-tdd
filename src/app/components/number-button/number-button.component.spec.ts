@@ -143,4 +143,36 @@ describe('NumberButtonComponent', () => {
       expect(component.clickEvent).toHaveBeenCalled();
     });
   });
+
+  it('should receive "."', () => {
+    component.value = '.';
+    component.validateInput();
+    fixture.detectChanges();
+    const numberButtonNativeElement = fixture.debugElement.nativeElement;
+    expect(numberButtonNativeElement.querySelector('.number-button').textContent).toEqual('.');
+  });
+
+  it('should receive "x"', () => {
+    component.value = 'x';
+    component.validateInput();
+    fixture.detectChanges();
+    const numberButtonNativeElement = fixture.debugElement.nativeElement;
+    expect(numberButtonNativeElement.querySelector('.number-button').textContent).toEqual('x');
+  });
+
+  it('should receive "/"', () => {
+    component.value = '/';
+    component.validateInput();
+    fixture.detectChanges();
+    const numberButtonNativeElement = fixture.debugElement.nativeElement;
+    expect(numberButtonNativeElement.querySelector('.number-button').textContent).toEqual('/');
+  });
+
+  it('should receive "+"', () => {
+    component.value = '+';
+    component.validateInput();
+    fixture.detectChanges();
+    const numberButtonNativeElement = fixture.debugElement.nativeElement;
+    expect(numberButtonNativeElement.querySelector('.number-button').textContent).toEqual('+');
+  });
 });

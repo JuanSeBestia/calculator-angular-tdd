@@ -1,18 +1,21 @@
-.container{
-    position: relative;
-    height: 70px;
-    background: #366666;
+.container {
+  position: relative;
+  height: 70px;
+  background: #366666;
 }
-.displayValue{
-    text-align: right;
-    color: #ffffff;
-    width: 90%;
-    margin: auto;
-    font-weight: 600;
-    position: absolute;
-    top: 40%;
-    direction: rtl;
-    text-overflow: ellipsis;
-    max-height: 33px;
-    white-space: nowrap;
+.displayValue {
+  text-align: right;
+  color: #ffffff;
+  width: 90%;
+  margin: auto;
+  font-weight: 600;
+  position: absolute;
+  top: 20%;
+  max-height: 33px;
+}
+
+p {
+  float: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
