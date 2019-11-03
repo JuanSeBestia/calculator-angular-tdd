@@ -16,4 +16,8 @@ export class Tab2Page {
   updateDisplayValue(displayValue: string) {
     this.displayValue += displayValue;
   }
+
+  displayResult(){
+    
+  }
 }
