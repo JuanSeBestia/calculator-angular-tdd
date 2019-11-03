@@ -21,4 +21,8 @@ export class Tab2Page {
   displayResult() {
     this.displayValue = this.calculatorService.getResult();
   }
+
+  displayResult(){
+    
+  }
 }
