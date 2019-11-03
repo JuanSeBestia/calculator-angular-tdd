@@ -1,0 +1,127 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+trigger:
+  - master
+  - develop
+
+pr:
+  autoCancel: false
+  branches:
+    include:
+      - master
+      - develop
+
+variables:
+  buildConfiguration: 'Release'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    jobs:
+    - job: BuildJob
+      steps:
+      - template: azure/templates/install_packages.yml  # Template of build
+      - task: Npm@1
+        displayName: 'Build proyect'
+        inputs:
+          command: custom
+          customCommand: run build -- --prod
+  
+  - stage: Test
+    jobs:
+    - job: Test_Lint
+      steps:
+      - template: azure/templates/install_packages.yml  # Template of build
+      - task: Npm@1
+        displayName: 'Checkl lint'
+        inputs:
+          command: custom
+          customCommand: run check-lint
+    - job: Test_Unit
+      steps:
+      # Clean cache
+      - task: DeleteFiles@1
+        displayName: 'Delete JUnit files'
+        inputs:
+          SourceFolder: junit
+          Contents: 'TESTS*.xml'
+
+      - template: azure/templates/install_packages.yml  # Template of build
+      - task: Npm@1
+        displayName: 'Test Angular'
+        inputs:
+          command: custom
+          customCommand: run test -- --watch=false --code-coverage
+
+      # Publish tests
+      - task: PublishCodeCoverageResults@1
+        displayName: 'Publish code coverage Angular results'
+        condition: succeededOrFailed()
+        inputs:
+          codeCoverageTool: Cobertura
+          summaryFileLocation: 'coverage/cobertura-coverage.xml'
+          reportDirectory: coverage
+          failIfCoverageEmpty: true
+
+      - task: PublishTestResults@2
+        displayName: 'Publish Angular test results'
+        condition: succeededOrFailed()
+        inputs:
+          searchFolder: $(System.DefaultWorkingDirectory)/junit
+          testRunTitle: Angular
+          testResultsFormat: JUnit
+          testResultsFiles: "**/TESTS*.xml"
+
+    - job: Test_E2E
+      steps:
+      - template: azure/templates/install_packages.yml  # Template of build
+      - task: Npm@1
+        displayName: 'Run Unit Tests'
+        inputs:
+          command: custom
+          customCommand: run e2e
+
+      - task: PublishTestResults@2
+        displayName: 'Publish Angular E2E test results'
+        condition: succeededOrFailed()
+        inputs:
+          searchFolder: $(System.DefaultWorkingDirectory)/e2e/junit
+          testRunTitle: Angular_E2E
+          testResultsFormat: JUnit
+          testResultsFiles: "**/junit*.xml"
+  
+  - stage: Deploy
+    jobs:
+    - job: Deploy
+      steps:
+      - template: azure/templates/install_packages.yml  # Template of build
+      - task: Npm@1
+        displayName: 'Build proyect'
+        inputs:
+          command: custom
+          customCommand: run build -- --prod
+      
+      - task: PublishPipelineArtifact@0
+        inputs:
+          artifactName: 'calculator-tdd-anuglar'
+          targetPath: 'www'
+
+      - script: echo Deploying the code!
+      - script: ls -la
+      - task: AzureRmWebAppDeployment@4
+        inputs:
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'Free Trial (d16b719c-bd80-45e5-9ccb-c293ea353639)'
+          appType: 'webAppLinux'
+          WebAppName: 'JuanSeBestiaCalculatorTDD'
+          packageForLinux: '$(System.DefaultWorkingDirectory)/www'
+          RuntimeStack: 'PHP|7.0'
+
+      
