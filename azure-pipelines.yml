@@ -82,8 +82,9 @@ stages:
     - job: Test_E2E
       steps:
       - template: azure/templates/install_packages.yml  # Template of build
+      - script: ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=77.0.3865.75
       - task: Npm@1
-        displayName: 'Run Unit Tests'
+        displayName: 'Run E2E Tests'
         inputs:
           command: custom
           customCommand: run e2e
