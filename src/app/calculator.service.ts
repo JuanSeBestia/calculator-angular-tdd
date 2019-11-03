@@ -32,11 +32,17 @@ export class CalculatorService {
 
   getResult(): string {
     //if (this.validateInput(this.currentValue)) {
-      this.evaluateValue(this.currentValue);
-      return this.getCurrentValue();
+    this.evaluateValue(this.currentValue);
+    return this.getCurrentValue();
     //}
     /* else {
       return "Syntax Error";
     } */
+  }
+
+
+  clean() {
+    this.setCurrentValue("");
+    return this.getCurrentValue();
   }
 }

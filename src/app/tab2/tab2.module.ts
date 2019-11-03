@@ -7,6 +7,7 @@ import { Tab2Page } from './tab2.page';
 import { DisplayComponent } from '../components/display/display.component';
 import { NumberButtonComponent } from '../components/number-button/number-button.component';
 import { ResultBtnComponent } from '../components/result-btn/result-btn.component';
+import { CleanBtnComponent } from '../components/clean-btn/clean-btn.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { ResultBtnComponent } from '../components/result-btn/result-btn.componen
     DisplayComponent,
     NumberButtonComponent,
     ResultBtnComponent,
+    CleanBtnComponent,
   ]
 })
 export class Tab2PageModule {}
