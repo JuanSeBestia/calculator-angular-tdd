@@ -1,8 +1,10 @@
 .container {
   position: relative;
   height: 70px;
-  background: #366666;
+  outline: 1px solid black;
+  background: #3f5666;
 }
+
 .displayValue {
   text-align: right;
   color: #ffffff;

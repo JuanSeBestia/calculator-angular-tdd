@@ -39,4 +39,10 @@ export class CalculatorService {
       return "Syntax Error";
     } */
   }
+
+
+  clean() {
+    this.setCurrentValue("");
+    return this.getCurrentValue();
+  }
 }
