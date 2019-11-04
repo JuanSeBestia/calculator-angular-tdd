@@ -11,28 +11,11 @@ describe('CalculatorService', () => {
   });
 
 
-  it('should have a function that sets the currentValue value', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    expect(service.setCurrentValue != undefined).toBeTruthy();
-  });
-
   it('should set the currentValue value', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
     let value = "123";
     service.setCurrentValue(value)
     expect(value === service.getCurrentValue()).toBe(true);
-  });
-
-
-  it('should have a function that returns the currentValue value', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    expect(service.getCurrentValue != undefined).toBeTruthy();
-  });
-
-
-  it('should have a function that examines if the value of currentValue is valid', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    expect(service.validateInput != undefined).toBeTruthy();
   });
 
 
@@ -49,16 +32,6 @@ describe('CalculatorService', () => {
     expect(service.validateInput(value)).toBe(false);
   });
  */
-
-  it('should have a function that evaluate the value expression of currentValue', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    expect(service.evaluateValue != undefined).toBeTruthy();
-  });
-
-  it('should have a function that returns the mathematical value expression of currentValue', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    expect(service.getResult != undefined).toBeTruthy();
-  });
 
 
   it('should returns the mathematical value expression of currentValue', () => {
