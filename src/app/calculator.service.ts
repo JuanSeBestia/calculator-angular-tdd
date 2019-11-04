@@ -42,7 +42,7 @@ export class CalculatorService {
 
 
   clean() {
-    this.setCurrentValue("");
+    this.setCurrentValue('');
     return this.getCurrentValue();
   }
 }

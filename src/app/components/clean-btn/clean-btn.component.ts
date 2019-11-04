@@ -6,8 +6,8 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./clean-btn.component.scss'],
 })
 export class CleanBtnComponent implements OnInit {
-  @Input() color: string = "#232323";
-  
+  @Input() color = '#232323';
+
   click = new EventEmitter<null>();
 
   constructor() { }
