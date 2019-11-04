@@ -13,38 +13,38 @@ describe('CalculatorService', () => {
 
   it('should set the currentValue value', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
-    let value = "123";
-    service.setCurrentValue(value)
+    const value = '123';
+    service.setCurrentValue(value);
     expect(value === service.getCurrentValue()).toBe(true);
   });
 
 
-/*   it('should examine if the mathematical syntax value of currentValue is valid', () => {
+  it('should examine if the mathematical syntax value of currentValue is valid', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
-    let value = "9*1-4*9.7";
+    const value = '9*1-4*9.7';
     expect(service.validateInput(value)).toBe(true);
   });
- */
 
-/*   it('should examine if the mathematical syntax value of currentValue is not valid', () => {
+
+  it('should examine if the mathematical syntax value of currentValue is not valid', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
-    let value = "9*1-4*9.7.5";
+    const value = '9*1-4*9.7.5';
     expect(service.validateInput(value)).toBe(false);
   });
- */
+
 
 
   it('should returns the mathematical value expression of currentValue', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
-    let value = "2+2";
+    const value = '2+2';
     service.setCurrentValue(value);
-    expect(service.getResult() === "4").toBe(true);
+    expect(service.getResult()).toBe('4');
   });
 
-  /* it('should return "Syntax Error" if the mathematical expression is invalid', () => {
+  it('should return "Syntax Error" if the mathematical expression is invalid', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
-    let value = "2+2*0.6.6";
+    const value = '2+2*0.6.6';
     service.setCurrentValue(value);
-    expect(service.getResult() === "Syntax Error").toBe(true);
-  }); */
+    expect(service.getResult() === 'Syntax Error').toBe(true);
+  });
 });

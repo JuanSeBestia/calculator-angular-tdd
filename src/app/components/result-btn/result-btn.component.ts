@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ResultBtnComponent implements OnInit {
 
-  @Input() color: string = '#AAA';
+  @Input() color = '#AAA';
 
   click = new EventEmitter<string>();
 
@@ -16,6 +16,6 @@ export class ResultBtnComponent implements OnInit {
   ngOnInit() { }
 
   clickEvent() {
-    this.click.emit("result-button-pressed");
+    this.click.emit('result-button-pressed');
   }
 }

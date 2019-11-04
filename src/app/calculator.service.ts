@@ -5,7 +5,7 @@ import * as math from 'mathjs';
   providedIn: 'root'
 })
 export class CalculatorService {
-  private currentValue: string = "";
+  private currentValue = '';
 
   constructor() { }
 
@@ -25,16 +25,16 @@ export class CalculatorService {
 
 
   evaluateValue(value) {
-    let expression = math.evaluate(value);
+    const expression = math.evaluate(value);
     this.setCurrentValue(expression + '');
   }
 
 
   getResult(): string {
-    //if (this.validateInput(this.currentValue)) {
+    // if (this.validateInput(this.currentValue)) {
       this.evaluateValue(this.currentValue);
       return this.getCurrentValue();
-    //}
+    // }
     /* else {
       return "Syntax Error";
     } */
