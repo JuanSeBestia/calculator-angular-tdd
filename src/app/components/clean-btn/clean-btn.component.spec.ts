@@ -25,7 +25,7 @@ describe('CleanBtnComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  
+
   it('should be pressed', async () => {
     spyOn(component, 'clickEvent');
 
