@@ -5,6 +5,7 @@ import { Tab2Page } from './tab2.page';
 import { DisplayComponent } from '../components/display/display.component';
 import { NumberButtonComponent } from '../components/number-button/number-button.component';
 import { ResultBtnComponent } from '../components/result-btn/result-btn.component';
+import { CleanBtnComponent } from '../components/clean-btn/clean-btn.component';
 
 
 describe('Tab2Page', () => {
@@ -13,7 +14,8 @@ describe('Tab2Page', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Tab2Page, DisplayComponent, NumberButtonComponent, ResultBtnComponent],
+      declarations: [Tab2Page, DisplayComponent, NumberButtonComponent, ResultBtnComponent,
+        CleanBtnComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

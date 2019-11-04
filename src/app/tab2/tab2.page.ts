@@ -8,6 +8,9 @@ import { CalculatorService } from '../calculator.service';
 })
 export class Tab2Page {
   displayValue: string;
+  functionColor = '#ec9770';
+  numberColor = '#fff';
+  clearColor = '#ddd';
 
   constructor(private calculatorService: CalculatorService, ) {
     this.displayValue = this.calculatorService.getCurrentValue();
@@ -20,5 +23,9 @@ export class Tab2Page {
 
   displayResult() {
     this.displayValue = this.calculatorService.getResult();
+  }
+
+  cleanDisplay() {
+    this.displayValue = this.calculatorService.clean();
   }
 }
