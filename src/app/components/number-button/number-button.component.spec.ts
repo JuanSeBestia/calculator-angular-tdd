@@ -152,12 +152,12 @@ describe('NumberButtonComponent', () => {
     expect(numberButtonNativeElement.querySelector('.number-button').textContent).toEqual('.');
   });
 
-  it('should receive "x"', () => {
-    component.value = 'x';
+  it('should receive "*"', () => {
+    component.value = '*';
     component.validateInput();
     fixture.detectChanges();
     const numberButtonNativeElement = fixture.debugElement.nativeElement;
-    expect(numberButtonNativeElement.querySelector('.number-button').textContent).toEqual('x');
+    expect(numberButtonNativeElement.querySelector('.number-button').textContent).toEqual('*');
   });
 
   it('should receive "/"', () => {

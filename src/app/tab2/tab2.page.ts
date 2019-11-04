@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CalculatorService } from '../calculator.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,13 +8,17 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
   displayValue: string;
-  validInput = '^((\-)?(\d+\.?\d*)+([\+\-x\/]{1}(\d+\.?\d*)*)*)+';
 
-  constructor() {
-    this.displayValue = '0';
+  constructor(private calculatorService: CalculatorService, ) {
+    this.displayValue = this.calculatorService.getCurrentValue();
   }
 
   updateDisplayValue(displayValue: string) {
     this.displayValue += displayValue;
+    this.calculatorService.setCurrentValue(this.displayValue);
+  }
+
+  displayResult() {
+    this.displayValue = this.calculatorService.getResult();
   }
 }
