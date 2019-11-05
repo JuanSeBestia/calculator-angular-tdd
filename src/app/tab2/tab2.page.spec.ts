@@ -28,4 +28,8 @@ describe('Tab2Page', () => {
 
     expect(component).toBeTruthy();
   });
-});
+
+  it('should have a Background image', () => {
+    const bgImage = fixture.elementRef.nativeElement;
+    expect(bgImage.style.backgroundImage).toBeDefined();
+  });
