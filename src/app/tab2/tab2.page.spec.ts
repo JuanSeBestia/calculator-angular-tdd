@@ -38,7 +38,7 @@ describe('Tab2Page', () => {
   it('should show a demon image when the value of calculator is "666"', () => {
     component.displayValue = '666';
     component.displayDemonImage();
-    const bgImage = <HTMLElement>document.querySelector('.background__image');
+    const bgImage = document.querySelector('.background__image') as HTMLElement;
     const isImageADemon = bgImage.style.backgroundImage.includes('demon');
     expect(isImageADemon).toBe(true);
   });
