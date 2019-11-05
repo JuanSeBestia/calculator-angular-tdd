@@ -9,6 +9,12 @@ ion-col {
   top: 15%;
   margin: auto;
 }
+
+.background__image {
+  background-image: url("/assets/images/cofee.jpeg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .title {
