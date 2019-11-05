@@ -11,6 +11,7 @@ ion-col {
 }
 
 .background__image {
+  transition: background-image 1s ease-in-out;
   background-image: url("/assets/images/cofee.jpeg");
   background-size: cover;
   width: 100%;

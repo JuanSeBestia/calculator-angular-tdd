@@ -12,20 +12,36 @@ export class Tab2Page {
   numberColor = '#fff';
   clearColor = '#ddd';
 
+  defaultBgImage = 'url("/assets/images/cofee.jpeg")';
+
   constructor(private calculatorService: CalculatorService, ) {
     this.displayValue = this.calculatorService.getCurrentValue();
   }
+
 
   updateDisplayValue(displayValue: string) {
     this.displayValue += displayValue;
     this.calculatorService.setCurrentValue(this.displayValue);
   }
 
+
   displayResult() {
     this.displayValue = this.calculatorService.getResult();
   }
 
+
   cleanDisplay() {
     this.displayValue = this.calculatorService.clean();
+  }
+
+
+  displayDemonImage() {
+    let deafultBgImage = <HTMLElement>document.querySelector('.background__image');
+    if (this.displayValue === '666') {
+      deafultBgImage.style.backgroundImage = 'url("/assets/images/demon_sebastian.jpg")';
+    }
+    else {
+      deafultBgImage.style.backgroundImage = this.defaultBgImage;
+    }
   }
 }

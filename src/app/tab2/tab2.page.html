@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar class="title">
     <ion-title>
-      Calculator Jess & Juanse 
+      Calculator Jess & Juanse
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +11,7 @@
     <ion-grid class="grid-width">
       <ion-row class="ion-justify-content-center">
         <ion-col size="12">
-          <app-display currentValue="{{displayValue}}"></app-display>
+          <app-display (changeCurrentValue)="displayDemonImage()" currentValue="{{displayValue}}"></app-display>
         </ion-col>
       </ion-row>
       <ion-row>
