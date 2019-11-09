@@ -33,3 +33,12 @@ describe('Tab2Page', () => {
     const bgImage = fixture.elementRef.nativeElement;
     expect(bgImage.style.backgroundImage).toBeDefined();
   });
+
+
+  it('should show a demon image when the value of calculator is "666"', () => {
+    component.displayValue = '666';
+    fixture.detectChanges();
+    const element = document.querySelector('.background__image') as HTMLElement;
+    expect(element.style.backgroundImage).toContain('demon');
+  });
+});

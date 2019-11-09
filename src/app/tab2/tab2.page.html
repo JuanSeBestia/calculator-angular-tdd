@@ -1,13 +1,14 @@
 <ion-header>
   <ion-toolbar class="title">
     <ion-title>
-      Calculator Jess & Juanse 
+      Calculator Jess & Juanse
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="background__image">
+  <div class="background__image" [ngStyle]="{'background-image': (displayValue === '666' ? 
+    'url(\'/assets/images/demon_sebastian.jpg\')' : '')}">
     <ion-grid class="grid-width">
       <ion-row class="ion-justify-content-center">
         <ion-col size="12">

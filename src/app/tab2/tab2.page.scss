@@ -11,6 +11,7 @@ ion-col {
 }
 
 .background__image {
+  transition: background-image 1s ease-in-out;
   background-image: url("/assets/images/cofee.jpeg");
   background-size: cover;
   width: 100%;
@@ -21,4 +22,8 @@ ion-col {
   --background: #3f5665;
   color: #fff;
   text-align: center;
+}
+
+.demon-background {
+  background-image: url("/assets/images/demon_sebastian.jpg");
 }
