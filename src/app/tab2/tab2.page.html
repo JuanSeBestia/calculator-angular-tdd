@@ -7,11 +7,12 @@
 </ion-header>
 
 <ion-content>
-  <div class="background__image">
+  <div class="background__image" [ngStyle]="{'background-image': (displayValue === '666' ? 
+    'url(\'/assets/images/demon_sebastian.jpg\')' : '')}">
     <ion-grid class="grid-width">
       <ion-row class="ion-justify-content-center">
         <ion-col size="12">
-          <app-display (changeCurrentValue)="displayDemonImage()" currentValue="{{displayValue}}"></app-display>
+          <app-display currentValue="{{displayValue}}"></app-display>
         </ion-col>
       </ion-row>
       <ion-row>

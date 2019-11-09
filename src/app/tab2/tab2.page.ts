@@ -33,14 +33,4 @@ export class Tab2Page {
   cleanDisplay() {
     this.displayValue = this.calculatorService.clean();
   }
-
-
-  displayDemonImage() {
-    const deafultBgImage = document.querySelector('.background__image') as HTMLElement;
-    if (this.displayValue === '666') {
-      deafultBgImage.style.backgroundImage = 'url("/assets/images/demon_sebastian.jpg")';
-    } else {
-      deafultBgImage.style.backgroundImage = this.defaultBgImage;
-    }
-  }
 }
