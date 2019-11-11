@@ -8,7 +8,7 @@
 
 <ion-content>
   <div class="background__image" [ngStyle]="{'background-image': (displayValue === '666' ? 
-    'url(\'/assets/images/demon_sebastian.jpg\')' : '')}">
+    'url(\'/assets/images/demon_sebastian.jpg\')' : (displayValue === '42' ? 'url(\'/assets/images/god.jpg\')' : ''))}">
     <ion-grid class="grid-width">
       <ion-row class="ion-justify-content-center">
         <ion-col size="12">
