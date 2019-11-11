@@ -9,18 +9,17 @@ export class CalculatorService {
 
   constructor() { }
 
-  setCurrentValue(value) {
+
+  setCurrentValue(value: string) {
+    if (value.includes('Syntax Error')) {
+      value = value.replace('Syntax Error', '');
+    }
     this.currentValue = value;
   }
 
 
   getCurrentValue(): string {
     return this.currentValue;
-  }
-
-
-  validateInput(value): boolean {
-    return /^((\-)?(\d+\.?\d*)+([\+\-\*\/]{1}(\d+\.?\d*)*)*)+/.test(value);
   }
 
 
@@ -31,13 +30,14 @@ export class CalculatorService {
 
 
   getResult(): string {
-    // if (this.validateInput(this.currentValue)) {
+    try {
       this.evaluateValue(this.currentValue);
       return this.getCurrentValue();
-    // }
-    /* else {
-      return "Syntax Error";
-    } */
+    } catch (error) {
+      console.error('CalculatorService::getResult(), Error', error);
+      this.currentValue = 'Syntax Error';
+      return this.getCurrentValue();
+    }
   }
 
 

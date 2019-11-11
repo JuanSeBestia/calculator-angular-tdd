@@ -22,6 +22,7 @@ export class Tab2Page {
   updateDisplayValue(displayValue: string) {
     this.displayValue += displayValue;
     this.calculatorService.setCurrentValue(this.displayValue);
+    this.displayValue = this.calculatorService.getCurrentValue();
   }
 
 
