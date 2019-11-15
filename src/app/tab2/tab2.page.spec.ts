@@ -41,4 +41,12 @@ describe('Tab2Page', () => {
     const element = document.querySelector('.background__image') as HTMLElement;
     expect(element.style.backgroundImage).toContain('demon');
   });
+
+
+  it('should show a God image when the value of calculator is "42"', () => {
+    component.displayValue = '42';
+    fixture.detectChanges();
+    const element = document.querySelector('.background__image') as HTMLElement;
+    expect(element.style.backgroundImage).toContain('god');
+  });
 });
