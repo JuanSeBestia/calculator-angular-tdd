@@ -24,7 +24,7 @@ export class CalculatorService {
 
 
   evaluateValue(value) {
-    if (value.length == 0) {
+    if (value.length === 0) {
       this.setCurrentValue('');
     } else {
       const expression = math.evaluate(value);
