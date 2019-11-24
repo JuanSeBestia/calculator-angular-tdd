@@ -24,8 +24,12 @@ export class CalculatorService {
 
 
   evaluateValue(value) {
-    const expression = math.evaluate(value);
-    this.setCurrentValue(expression + '');
+    if (value.length === 0) {
+      this.setCurrentValue('');
+    } else {
+      const expression = math.evaluate(value);
+      this.setCurrentValue(expression + '');
+    }
   }
 
 

@@ -18,8 +18,14 @@ describe('CalculatorService', () => {
     expect(value === service.getCurrentValue()).toBe(true);
   });
 
+  it('should return 0 if the expression is empty', () => {
+    const service: CalculatorService = TestBed.get(CalculatorService);
+    const value = '';
+    service.setCurrentValue(value);
+    expect(service.getResult()).toBe('');
+  });
 
-  it('should returns the mathematical value expression of currentValue', () => {
+  it('should return the mathematical value expression of currentValue', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
     const value = '2+2';
     service.setCurrentValue(value);
