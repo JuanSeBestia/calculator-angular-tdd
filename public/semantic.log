@@ -1,0 +1,266 @@
+npx semantic-release --branch feature/semantic-release --no-ci   
+[11:24:07 AM] [semantic-release] › ℹ  Running semantic-release version 15.13.24
+[11:24:08 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/git"
+[11:24:08 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/github"
+[11:24:08 AM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/commit-analyzer"
+[11:24:08 AM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/release-notes-generator"
+[11:24:08 AM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/git"
+[11:24:08 AM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/github"
+[11:24:08 AM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/github"
+[11:24:08 AM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/github"
+[11:24:08 AM] [semantic-release] › ✔  Run automated release from branch feature/semantic-release
+[11:24:10 AM] [semantic-release] › ✔  Allowed to push to the Git repository
+[11:24:10 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/git"
+[11:24:10 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/git"
+[11:24:10 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/github"
+[11:24:10 AM] [semantic-release] [@semantic-release/github] › ℹ  Verify GitHub authentication
+[11:24:11 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/github"
+[11:24:11 AM] [semantic-release] › ℹ  No git tag version found
+[11:24:11 AM] [semantic-release] › ℹ  No previous release found, retrieving all commits
+[11:24:12 AM] [semantic-release] › ℹ  Found 24 commits since last release
+[11:24:12 AM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fic(semanti): fix TOKEN
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: feat(sematic): Add semantic installation
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is minor
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Add web config
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #12 from JuanSeBestia/feature/numberbuttons
+
+Add button numbers
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Add button numbers
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #9 from JuanSeBestia/US-1Display
+
+Us 1 display
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Add first unit tests
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Add component display
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge branch 'develop' into US-1Display
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #7 from JuanSeBestia/feature/add-lint-fix
+
+Add lint function
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Add lint function
+
+You can lint the code with `npm run lint`
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #6 from JuanSeBestia/project-setup
+
+Project setup
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ptoject setup
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #5 from JuanSeBestia/feature/add-file
+
+Add env file
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Add entry
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Add env file
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #4 from JuanSeBestia/feature/fix-orthography
+
+Update README.md
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Update README.md
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Update README.md
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Create Requeriments_UserStories.md
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Update README.md
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Update README.md
+
+Add sistem gestion
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Update README.md
+
+Add initial info about the proyect
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Initial commit
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:24:12 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analysis of 24 commits complete: minor release
+[11:24:12 AM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[11:24:12 AM] [semantic-release] › ℹ  There is no previous release, the next release version is 1.0.0
+[11:24:12 AM] [semantic-release] › ℹ  Start step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[11:24:12 AM] [semantic-release] › ✔  Completed step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[11:24:12 AM] [semantic-release] › ℹ  Start step "prepare" of plugin "@semantic-release/git"
+[11:24:13 AM] [semantic-release] [@semantic-release/git] › ℹ  Prepared Git release: v1.0.0
+[11:24:13 AM] [semantic-release] › ✔  Completed step "prepare" of plugin "@semantic-release/git"
+[11:24:16 AM] [semantic-release] › ✔  Created tag v1.0.0
+[11:24:16 AM] [semantic-release] › ℹ  Start step "publish" of plugin "@semantic-release/github"
+[11:24:17 AM] [semantic-release] [@semantic-release/github] › ℹ  Published GitHub release: https://github.com/JuanSeBestia/calculator-angular-tdd/releases/tag/v1.0.0
+[11:24:17 AM] [semantic-release] › ✔  Completed step "publish" of plugin "@semantic-release/github"
+[11:24:17 AM] [semantic-release] › ℹ  Start step "success" of plugin "@semantic-release/github"
+[11:24:36 AM] [semantic-release] [@semantic-release/github] › ℹ  Added comment to issue #12: https://github.com/JuanSeBestia/calculator-angular-tdd/pull/12#issuecomment-538763233
+[11:24:39 AM] [semantic-release] [@semantic-release/github] › ℹ  Added comment to issue #9: https://github.com/JuanSeBestia/calculator-angular-tdd/pull/9#issuecomment-538763239
+[11:24:42 AM] [semantic-release] [@semantic-release/github] › ℹ  Added comment to issue #7: https://github.com/JuanSeBestia/calculator-angular-tdd/pull/7#issuecomment-538763244
+[11:24:45 AM] [semantic-release] [@semantic-release/github] › ℹ  Added comment to issue #6: https://github.com/JuanSeBestia/calculator-angular-tdd/pull/6#issuecomment-538763248
+[11:24:48 AM] [semantic-release] [@semantic-release/github] › ℹ  Added comment to issue #5: https://github.com/JuanSeBestia/calculator-angular-tdd/pull/5#issuecomment-538763253
+[11:24:51 AM] [semantic-release] [@semantic-release/github] › ℹ  Added comment to issue #4: https://github.com/JuanSeBestia/calculator-angular-tdd/pull/4#issuecomment-538763262
+[11:24:54 AM] [semantic-release] [@semantic-release/github] › ℹ  Added labels [ 'released' ] to issue #12
+[11:24:57 AM] [semantic-release] [@semantic-release/github] › ℹ  Added labels [ 'released' ] to issue #9
+[11:25:00 AM] [semantic-release] [@semantic-release/github] › ℹ  Added labels [ 'released' ] to issue #7
+[11:25:03 AM] [semantic-release] [@semantic-release/github] › ℹ  Added labels [ 'released' ] to issue #6
+[11:25:06 AM] [semantic-release] [@semantic-release/github] › ℹ  Added labels [ 'released' ] to issue #5
+[11:25:09 AM] [semantic-release] [@semantic-release/github] › ℹ  Added labels [ 'released' ] to issue #4
+[11:25:10 AM] [semantic-release] › ✔  Completed step "success" of plugin "@semantic-release/github"
+[11:25:10 AM] [semantic-release] › ✔  Published release 1.0.0
+
+
+npx semantic-release --branch feature/semantic-release --no-ci
+[12:02:10 PM] [semantic-release] › ℹ  Running semantic-release version 15.13.24
+[12:02:10 PM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/git"
+[12:02:10 PM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/github"
+[12:02:10 PM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/commit-analyzer"
+[12:02:10 PM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/release-notes-generator"
+[12:02:10 PM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/git"
+[12:02:10 PM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/github"
+[12:02:10 PM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/github"
+[12:02:10 PM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/github"
+[12:02:10 PM] [semantic-release] › ✔  Run automated release from branch feature/semantic-release
+[12:02:12 PM] [semantic-release] › ✔  Allowed to push to the Git repository
+[12:02:12 PM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/git"
+[12:02:12 PM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/git"
+[12:02:12 PM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/github"
+[12:02:12 PM] [semantic-release] [@semantic-release/github] › ℹ  Verify GitHub authentication
+[12:02:13 PM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/github"
+[12:02:16 PM] [semantic-release] › ℹ  Found git tag v1.0.0 associated with version 1.0.0
+[12:02:16 PM] [semantic-release] › ℹ  Found 6 commits since last release
+[12:02:16 PM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix(again): again
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix(git): ignore env
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge remote-tracking branch 'origin/feature/semantic-release' into feature/semantic-release
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: feature(semantic): Add logs
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Add logs
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix(semantic): add config only in master
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[12:02:16 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analysis of 6 commits complete: patch release
+[12:02:16 PM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[12:02:16 PM] [semantic-release] › ℹ  The next release version is 1.0.1
+[12:02:16 PM] [semantic-release] › ℹ  Start step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[12:02:16 PM] [semantic-release] › ✔  Completed step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[12:02:16 PM] [semantic-release] › ℹ  Start step "prepare" of plugin "@semantic-release/git"
+[12:02:17 PM] [semantic-release] [@semantic-release/git] › ℹ  Prepared Git release: v1.0.1
+[12:02:17 PM] [semantic-release] › ✔  Completed step "prepare" of plugin "@semantic-release/git"
+[12:02:21 PM] [semantic-release] › ✔  Created tag v1.0.1
+[12:02:21 PM] [semantic-release] › ℹ  Start step "publish" of plugin "@semantic-release/github"
+[12:02:21 PM] [semantic-release] [@semantic-release/github] › ℹ  Published GitHub release: https://github.com/JuanSeBestia/calculator-angular-tdd/releases/tag/v1.0.1
+[12:02:21 PM] [semantic-release] › ✔  Completed step "publish" of plugin "@semantic-release/github"
+[12:02:21 PM] [semantic-release] › ℹ  Start step "success" of plugin "@semantic-release/github"
+[12:02:27 PM] [semantic-release] › ✔  Completed step "success" of plugin "@semantic-release/github"
+[12:02:27 PM] [semantic-release] › ✔  Published release 1.0.1
+
+npx semantic-release --branch feature/semantic-release --no-ci
+[12:09:44 PM] [semantic-release] › ℹ  Running semantic-release version 15.13.24
+[12:09:44 PM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/git"
+[12:09:44 PM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/github"
+[12:09:44 PM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/commit-analyzer"
+[12:09:44 PM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/release-notes-generator"
+[12:09:44 PM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/git"
+[12:09:44 PM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/github"
+[12:09:44 PM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/github"
+[12:09:44 PM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/github"
+[12:09:44 PM] [semantic-release] › ✔  Run automated release from branch feature/semantic-release
+[12:09:46 PM] [semantic-release] › ✔  Allowed to push to the Git repository
+[12:09:46 PM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/git"
+[12:09:46 PM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/git"
+[12:09:46 PM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/github"
+[12:09:46 PM] [semantic-release] [@semantic-release/github] › ℹ  Verify GitHub authentication
+[12:09:47 PM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/github"
+[12:09:48 PM] [semantic-release] › ℹ  Found git tag v1.0.1 associated with version 1.0.1
+[12:09:48 PM] [semantic-release] › ℹ  Found 7 commits since last release
+[12:09:48 PM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge remote-tracking branch 'origin/feature/semantic-release' into feature/semantic-release
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix(semantic): only in master
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: only in master
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix(semantic): only in one branch
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge remote-tracking branch 'origin/feature/semantic-release' into feature/semantic-release
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: feature(semantic): Add two branches
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Add two branches
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:09:48 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analysis of 7 commits complete: patch release
+[12:09:48 PM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[12:09:48 PM] [semantic-release] › ℹ  The next release version is 1.0.2
+[12:09:48 PM] [semantic-release] › ℹ  Start step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[12:09:48 PM] [semantic-release] › ✔  Completed step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[12:09:48 PM] [semantic-release] › ℹ  Start step "prepare" of plugin "@semantic-release/git"
+[12:09:49 PM] [semantic-release] [@semantic-release/git] › ℹ  Prepared Git release: v1.0.2
+[12:09:49 PM] [semantic-release] › ✔  Completed step "prepare" of plugin "@semantic-release/git"
+[12:09:52 PM] [semantic-release] › ✔  Created tag v1.0.2
+[12:09:52 PM] [semantic-release] › ℹ  Start step "publish" of plugin "@semantic-release/github"
+[12:09:53 PM] [semantic-release] [@semantic-release/github] › ℹ  Published GitHub release: https://github.com/JuanSeBestia/calculator-angular-tdd/releases/tag/v1.0.2
+[12:09:53 PM] [semantic-release] › ✔  Completed step "publish" of plugin "@semantic-release/github"
+[12:09:53 PM] [semantic-release] › ℹ  Start step "success" of plugin "@semantic-release/github"
+[12:09:59 PM] [semantic-release] › ✔  Completed step "success" of plugin "@semantic-release/github"
+[12:09:59 PM] [semantic-release] › ✔  Published release 1.0.2
+
+
+ npx semantic-release --branch feature/semantic-release --no-ci
+[12:21:03 PM] [semantic-release] › ℹ  Running semantic-release version 15.13.24
+[12:21:03 PM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/git"
+[12:21:03 PM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/github"
+[12:21:03 PM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/commit-analyzer"
+[12:21:03 PM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/release-notes-generator"
+[12:21:03 PM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/git"
+[12:21:03 PM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/github"
+[12:21:03 PM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/github"
+[12:21:03 PM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/github"
+[12:21:03 PM] [semantic-release] › ✔  Run automated release from branch feature/semantic-release
+[12:21:05 PM] [semantic-release] › ✔  Allowed to push to the Git repository
+[12:21:05 PM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/git"
+[12:21:05 PM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/git"
+[12:21:05 PM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/github"
+[12:21:05 PM] [semantic-release] [@semantic-release/github] › ℹ  Verify GitHub authentication
+[12:21:06 PM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/github"
+[12:21:07 PM] [semantic-release] › ℹ  Found git tag v1.0.2 associated with version 1.0.2
+[12:21:07 PM] [semantic-release] › ℹ  Found 4 commits since last release
+[12:21:07 PM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[12:21:07 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #18 from JuanSeBestia/semantic/test2
+
+With Semantic commit
+[12:21:07 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:21:07 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix(semantic): add more information
+[12:21:07 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[12:21:07 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #17 from JuanSeBestia/semantic/test1
+
+fix(semantic): no semantic commit
+[12:21:07 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:21:07 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: no semantic commit
+[12:21:07 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[12:21:07 PM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analysis of 4 commits complete: patch release
+[12:21:07 PM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[12:21:07 PM] [semantic-release] › ℹ  The next release version is 1.0.3
+[12:21:07 PM] [semantic-release] › ℹ  Start step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[12:21:07 PM] [semantic-release] › ✔  Completed step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[12:21:07 PM] [semantic-release] › ℹ  Start step "prepare" of plugin "@semantic-release/git"
+[12:21:08 PM] [semantic-release] [@semantic-release/git] › ℹ  Prepared Git release: v1.0.3
+[12:21:08 PM] [semantic-release] › ✔  Completed step "prepare" of plugin "@semantic-release/git"
+[12:21:11 PM] [semantic-release] › ✔  Created tag v1.0.3
+[12:21:11 PM] [semantic-release] › ℹ  Start step "publish" of plugin "@semantic-release/github"
+[12:21:12 PM] [semantic-release] [@semantic-release/github] › ℹ  Published GitHub release: https://github.com/JuanSeBestia/calculator-angular-tdd/releases/tag/v1.0.3
+[12:21:12 PM] [semantic-release] › ✔  Completed step "publish" of plugin "@semantic-release/github"
+[12:21:12 PM] [semantic-release] › ℹ  Start step "success" of plugin "@semantic-release/github"
+[12:21:17 PM] [semantic-release] [@semantic-release/github] › ℹ  Added comment to issue #17: https://github.com/JuanSeBestia/calculator-angular-tdd/pull/17#issuecomment-538768184
+[12:21:20 PM] [semantic-release] [@semantic-release/github] › ℹ  Added comment to issue #18: https://github.com/JuanSeBestia/calculator-angular-tdd/pull/18#issuecomment-538768189
+[12:21:22 PM] [semantic-release] [@semantic-release/github] › ℹ  Added labels [ 'released' ] to issue #17
+[12:21:25 PM] [semantic-release] [@semantic-release/github] › ℹ  Added labels [ 'released' ] to issue #18
+[12:21:26 PM] [semantic-release] › ✔  Completed step "success" of plugin "@semantic-release/github"
+[12:21:26 PM] [semantic-release] › ✔  Published release 1.0.3

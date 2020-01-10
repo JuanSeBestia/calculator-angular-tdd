@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar class="title">
+    <ion-title>
+      Calculator Jess & Juanse
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background__image" [ngStyle]="{'background-image': (displayValue === '666' ? 
+    'url(\'/assets/images/demon_sebastian.jpg\')' : (displayValue === '42' ? 'url(\'/assets/images/god.jpg\')' : ''))}">
+    <ion-grid class="grid-width">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12">
+          <app-display currentValue="{{displayValue}}"></app-display>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3">
+          <app-number-button value="7" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="8" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="9" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="*" [color]="functionColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3">
+          <app-number-button value="4" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="5" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="6" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="-" [color]="functionColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3">
+          <app-number-button value="1" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="2" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="3" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="+" [color]="functionColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3">
+          <app-number-button value="0" [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="." [color]="numberColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+        <ion-col size="3">
+          <app-result-btn [color]="functionColor" (click)="displayResult()"></app-result-btn>
+        </ion-col>
+        <ion-col size="3">
+          <app-number-button value="/" [color]="functionColor" (numberClick)="updateDisplayValue($event)">
+          </app-number-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <app-clean-btn [color]="clearColor" (click)="cleanDisplay()"></app-clean-btn>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
