@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        Username
+      </th>
+      <th>
+        Math Operation
+      </th>
+      <th>
+        Result
+      </th>
+      <th>
+        Date
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mathOperation of mathOperations$ | async">
+      <td>{{mathOperation.username}}</td>
+      <td>{{mathOperation.math_operation}}</td>
+      <td>{{mathOperation.result}}</td>
+      <td>{{mathOperation.created_date | date: 'short'}}</td>
+    </tr>
+  </tbody>
+</table>
