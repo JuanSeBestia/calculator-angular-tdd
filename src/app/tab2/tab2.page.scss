@@ -12,18 +12,90 @@ ion-col {
 
 .background__image {
   transition: background-image 1s ease-in-out;
-  background-image: url("/assets/images/cofee.jpeg");
   background-size: cover;
-  width: 100%;
-  height: 100%;
 }
 
-.title {
-  --background: #3f5665;
+
+.demon-background {
+  background-image: url("/assets/images/demon_sebastian.jpg")!important;
+  width: 100%;
+  height: 100%;
+  z-index: 400;
+}
+
+.god-background {
+  background-image: url("/assets/images/god.jpg")!important;
+  width: 100%;
+  height: 100%;
+  z-index: 400;
+}
+
+ion-toolbar {
+  --background: #3f5665 ;
   color: #fff;
   text-align: center;
 }
 
-.demon-background {
-  background-image: url("/assets/images/demon_sebastian.jpg");
+@-webkit-keyframes STAR-MOVE {
+  from{
+    background-position: 0%;
+  }
+  to{
+    background-position: 1200%;
+  }
 }
+
+.background{
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%), url('/assets/images/stars.png') repeat 5% 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  -webkit-animation-name: STAR-MOVE;
+  -webkit-animation-duration: 1450s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.midground{
+  background: url('/assets/images/stars.png') repeat 20% 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 10px;
+  bottom: 0;
+  z-index: 200;
+
+  -webkit-animation-name: STAR-MOVE;
+  -webkit-animation-duration: 350s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.foreground{
+  transition: background-image 1s ease-in-out;
+  background: url('/assets/images/stars.png') repeat 35% 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 20px;
+  bottom: 0;
+  z-index: 300;
+  
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+
+  -webkit-animation-name: STAR-MOVE;
+  -webkit-animation-duration: 100s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.upper{
+  z-index: 400;
+}
+

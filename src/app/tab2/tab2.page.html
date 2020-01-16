@@ -7,9 +7,13 @@
 </ion-header>
 
 <ion-content>
-  <div class="background__image" [ngStyle]="{'background-image': (displayValue === '666' ? 
-    'url(\'/assets/images/demon_sebastian.jpg\')' : (displayValue === '42' ? 'url(\'/assets/images/god.jpg\')' : ''))}">
-    <ion-grid class="grid-width">
+  <div class="background">
+    <div class="midground">
+      <div class="background__image"
+        [ngClass]="{'demon-background': (displayValue === '666'), 'god-background': (displayValue === '42'), 'foreground': !(displayValue === '666') && !(displayValue === '42')}">
+      </div>
+    </div>
+    <ion-grid class="grid-width upper">
       <ion-row class="ion-justify-content-center">
         <ion-col size="12">
           <app-display currentValue="{{displayValue}}"></app-display>
