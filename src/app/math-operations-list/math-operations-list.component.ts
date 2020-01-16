@@ -16,8 +16,6 @@ export class MathOperationsListComponent implements OnInit {
 
   ngOnInit() {
     this.mathOperations$ = this.requestService.getMathOperationsList();
-
-    this.mathOperations$.subscribe(items => console.log(items));
   }
 
 }

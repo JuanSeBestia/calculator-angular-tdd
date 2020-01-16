@@ -4,5 +4,69 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(70deg, #253b6e, #d2ecf9);
+  background: linear-gradient(to bottom right, rgba(218, 240, 255, 0.41), rgb(62, 30, 104)), url(/assets/images/dabbing-unicorn.png);
+  background-repeat: no-repeat;
+  background-position: left;
 }
+
+ion-toolbar {
+  --background: #3f5665 !important;
+  color: #fff;
+  text-align: center;
+}
+
+/*
+* CSS TAKEN FROM 
+* https://codepen.io/Mamboleoo/pen/BxMQYQ
+*/
+
+.hide{
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+$particleSize: 20vmin;
+$animationDuration: 6s;
+$amount: 20;
+.content span {
+  width: $particleSize;
+  height: $particleSize;
+  border-radius: $particleSize;
+  backface-visibility: hidden;
+  position: absolute;
+  animation-name: move;
+  animation-duration: $animationDuration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  $colors: (
+    #583C87,
+    #E45A84,
+    #FFACAC
+  );
+  @for $i from 1 through $amount {
+    &:nth-child(#{$i}) {
+      color: nth($colors, random(length($colors)));
+      top: random(100) * 1%;
+      left: random(100) * 1%;
+      animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+      animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+      transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+      $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+      $x: if(random() > 0.5, -1, 1);
+      box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+    }
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+
+.upper{
+  z-index: 400;
+}
+
