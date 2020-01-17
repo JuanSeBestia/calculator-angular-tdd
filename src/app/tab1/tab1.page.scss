@@ -1,5 +1,6 @@
 .content{
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -70,3 +71,16 @@ $amount: 20;
   z-index: 400;
 }
 
+
+
+.to-bottom {
+  margin-top: auto;
+}
+
+.middle {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
