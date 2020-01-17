@@ -8,6 +8,13 @@
 
 <ion-content>
   <div class="content">
-    <app-math-operations-list></app-math-operations-list>
+    <div class="middle">
+      <div>
+        <app-math-operations-list [items]="items?.data"></app-math-operations-list>
+      </div>
+      <div class="to-bottom">
+        <app-paginator [arrayLength]="items?.totalPages" (activePage)="changePage($event)"></app-paginator>
+      </div>
+    </div>
   </div>
 </ion-content>
