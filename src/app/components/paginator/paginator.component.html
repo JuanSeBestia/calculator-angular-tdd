@@ -1,0 +1,3 @@
+<button [ngClass]="page === itemActive ? 'active' : ''" *ngFor="let page of itemsArray" class="page-btn" (click)="changePage(page)">
+  <span>{{page + 1}}</span>
+</button>

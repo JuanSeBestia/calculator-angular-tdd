@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let mathOperation of mathOperations$ | async">
+    <tr *ngFor="let mathOperation of items">
       <td>{{mathOperation.username}}</td>
       <td>{{mathOperation.math_operation}}</td>
       <td>{{mathOperation.result}}</td>
