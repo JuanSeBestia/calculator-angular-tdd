@@ -6,14 +6,18 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content class="no-scroll">
   <div class="hide">
-    <div class="content">
+  <div class="content">
+    <div class="middle">
       <span *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]"></span>
       <div class="upper">
-        <app-math-operations-list></app-math-operations-list>
+        <app-math-operations-list [items]="items?.data"></app-math-operations-list>
       </div>
+      <div class="to-bottom">
+        <app-paginator [arrayLength]="items?.totalPages" (activePage)="changePage($event)"></app-paginator>
+      </div>
+    </div>
     </div>
   </div>
 </ion-content>
