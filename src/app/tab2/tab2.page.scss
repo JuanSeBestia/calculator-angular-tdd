@@ -5,9 +5,8 @@ ion-col {
 
 .grid-width {
   max-width: 320px;
-  position: relative;
-  top: 15%;
-  margin: auto;
+  margin-top: 20px;
+  flex: none;
 }
 
 .background__image {
@@ -26,4 +25,20 @@ ion-col {
 
 .demon-background {
   background-image: url("/assets/images/demon_sebastian.jpg");
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-item{
+  --background: rgba(6,6,6, 0.6);
+  --color: #fff;
+  border-radius: 5px;
+}
+ion-input{
+  --background: transparent;
 }

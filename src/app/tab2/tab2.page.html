@@ -7,8 +7,15 @@
 </ion-header>
 
 <ion-content>
-  <div class="background__image" [ngStyle]="{'background-image': (displayValue === '666' ? 
+  <div class="background__image container"
+    [ngStyle]="{'background-image': (displayValue === '666' ? 
     'url(\'/assets/images/demon_sebastian.jpg\')' : (displayValue === '42' ? 'url(\'/assets/images/god.jpg\')' : ''))}">
+    <div>
+      <ion-item>
+        <ion-label position="stacked">Write your name in order to save your results!</ion-label>
+        <ion-input [(ngModel)]="name"></ion-input>
+      </ion-item>
+    </div>
     <ion-grid class="grid-width">
       <ion-row class="ion-justify-content-center">
         <ion-col size="12">
