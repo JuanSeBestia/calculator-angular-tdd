@@ -99,3 +99,15 @@ ion-toolbar {
   z-index: 400;
 }
 
+@media screen and(min-width: 1600px){
+  .midground{
+    -webkit-animation-duration: 20s;
+  }
+  .foreground{
+    -webkit-animation-duration: 10s;
+  }
+  .background{
+    -webkit-animation-duration: 30s;
+    background-size: initial;
+  }
+}
