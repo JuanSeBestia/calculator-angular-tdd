@@ -14,3 +14,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+export const BASE_URL = 'http://localhost:3000';
