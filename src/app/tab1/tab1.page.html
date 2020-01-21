@@ -13,7 +13,7 @@
         <app-math-operations-list [items]="items?.data"></app-math-operations-list>
       </div>
       <div class="to-bottom">
-        <app-paginator [arrayLength]="items?.totalPages" (activePage)="changePage($event)"></app-paginator>
+        <app-paginator [_arrayLength]="items?.totalPages" (activePage)="changePage($event)"></app-paginator>
       </div>
     </div>
   </div>

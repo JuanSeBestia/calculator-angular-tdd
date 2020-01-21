@@ -7,8 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PaginatorComponent implements OnInit {
 
-  private _arrayLength: number;
-  itemActive: Number;
+  private arrayLength: number;
+  itemActive: number;
   @Output() activePage: EventEmitter<number> = new EventEmitter();
 
   itemsArray: Array<number>;
@@ -20,9 +20,9 @@ export class PaginatorComponent implements OnInit {
   }
 
   @Input()
-  set arrayLength(arrayLength: number) {
-    this._arrayLength = arrayLength;
-    this.itemsArray = [...Array(this._arrayLength).keys()];
+  set _arrayLength(arrayLength: number) {
+    this.arrayLength = arrayLength;
+    this.itemsArray = [...Array(this.arrayLength).keys()];
     this.itemActive = this.itemsArray[0];
   }
 
