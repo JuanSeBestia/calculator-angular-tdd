@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CalculatorModel, CalculatorDataModel } from '../calulator-model';
 import { RequestService } from '../request.service';
@@ -8,7 +8,7 @@ import { RequestService } from '../request.service';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 
   mathOperations$: Observable<CalculatorModel>;
   items: CalculatorModel;
@@ -26,7 +26,7 @@ export class Tab1Page {
 
 
   getItems(page = 0) {
-    let params = { page: page + '' };
+    const params = { page: page + '' };
     this.mathOperations$ = this.requestService.getMathOperationsList(params);
 
     this.mathOperations$.subscribe((calcData: CalculatorModel) => {

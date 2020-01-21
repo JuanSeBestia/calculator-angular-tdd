@@ -1,7 +1,7 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { myInterceptor } from './myInterceptor';
+import { MyInterceptor } from './myInterceptor';
 
 
 export const httpInterceptorsProviders = [
-    { provide: HTTP_INTERCEPTORS, useClass: myInterceptor, multi: true },
-]
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true },
+];

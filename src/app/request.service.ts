@@ -15,8 +15,7 @@ export class RequestService {
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       this.presentErrorAlert(error.error.message);
-    }
-    else {
+    } else {
       this.presentErrorAlert(`Backend Error ${error.error}). Error code ${error.status}`);
     }
 
@@ -30,7 +29,7 @@ export class RequestService {
 
 
   public getMathOperationsList(params?): Observable<CalculatorModel> {
-    return this.http.get<CalculatorModel>(`${BASE_URL}/mathOperation`, { params: params })
+    return this.http.get<CalculatorModel>(`${BASE_URL}/mathOperation`, { params })
       .pipe(
         catchError(this.handleError)
       );
