@@ -1,14 +1,19 @@
 <ion-header>
   <ion-toolbar class="title">
     <ion-title>
-      Calculator Jess & Juanse 
+      Calculator Jess & Juanse
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="background__image">
-    <ion-grid class="grid-width">
+  <div class="background">
+    <div class="midground">
+      <div class="background__image"
+        [ngClass]="{'demon-background': (displayValue === '666'), 'god-background': (displayValue === '42'), 'foreground': !(displayValue === '666') && !(displayValue === '42')}">
+      </div>
+    </div>
+    <ion-grid class="grid-width upper">
       <ion-row class="ion-justify-content-center">
         <ion-col size="12">
           <app-display currentValue="{{displayValue}}"></app-display>

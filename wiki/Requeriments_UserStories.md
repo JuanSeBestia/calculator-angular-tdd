@@ -47,3 +47,13 @@
   12. I as the user of the application, wish that the background contains a modern concept so that I feel like using it and I am pleased to be there
 
   13. I as the user when error is happend, I want to see the error inside the display and the erro is would be errased when tap some button. When tap some button in the display would be the previous value after the error
+
+## Sprint 2
+
+### 1. Functional Requirements
+
+  1. I as the user want to save the operation, my name, date and result whenever push button "="
+  
+  2. I as the user want to use one input to put my name
+
+  3. I as the user want to see the opreation that I maked inside a table
