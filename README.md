@@ -7,7 +7,7 @@ We expect to have all mechanisms related of continuos integration and continus d
 
 * the documentation that doesn't require graphs would be made with MarckDown inside this git. 
 
-**LIVE DEMO:**  https://calculator-angular-tdd.firebaseapp.comfirebase
+**LIVE DEMO:**  https://calculator-angular-tdd.firebaseapp.com
 
 ## Sprint 1
 
