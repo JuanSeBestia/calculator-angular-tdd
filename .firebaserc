@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "default": "calculator-angular-tdd"
+  }
+}
