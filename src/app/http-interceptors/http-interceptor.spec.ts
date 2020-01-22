@@ -1,7 +1,7 @@
-import { myInterceptor } from './myInterceptor';
+import { MyInterceptor } from './myInterceptor';
 
 describe('HttpInterceptor', () => {
   it('should create an instance', () => {
-    expect(new myInterceptor()).toBeTruthy();
+    expect(new MyInterceptor()).toBeTruthy();
   });
 });

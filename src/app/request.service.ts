@@ -15,8 +15,7 @@ export class RequestService {
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       this.presentErrorAlert(error.error.message);
-    }
-    else {
+    } else {
       this.presentErrorAlert(`Backend Error ${error.error}). Error code ${error.status}`);
     }
 
