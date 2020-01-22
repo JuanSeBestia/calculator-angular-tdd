@@ -40,7 +40,7 @@ stages:
       steps:
       - template: azure/templates/install_packages.yml  # Template of build
       - task: Npm@1
-        displayName: 'Checkl lint'
+        displayName: 'Check lint'
         inputs:
           command: custom
           customCommand: run check-lint
@@ -107,7 +107,7 @@ stages:
       steps:
       - template: azure/templates/install_packages.yml  # Template of build
       - task: Npm@1
-        displayName: 'Build proyect'
+        displayName: 'Build project'
         inputs:
           command: custom
           customCommand: run build -- --prod
@@ -119,13 +119,10 @@ stages:
 
       - script: echo Deploying the code!
       - script: ls -la
-      - task: AzureRmWebAppDeployment@4
+      - task: Npm@1
+        displayName: 'Build project'
         inputs:
-          ConnectionType: 'AzureRM'
-          azureSubscription: 'Free Trial (d16b719c-bd80-45e5-9ccb-c293ea353639)'
-          appType: 'webAppLinux'
-          WebAppName: 'JuanSeBestiaCalculatorTDD'
-          packageForLinux: '$(System.DefaultWorkingDirectory)/www'
-          RuntimeStack: 'PHP|7.0'
+          command: custom
+          customCommand: run deploy
 
       
