@@ -2,6 +2,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MathOperationsListComponent } from './math-operations-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RequestService } from '../request.service';
 
 describe('MathOperationsListComponent', () => {
   let component: MathOperationsListComponent;
@@ -9,10 +11,12 @@ describe('MathOperationsListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MathOperationsListComponent ],
+      declarations: [MathOperationsListComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [HttpClientModule],
+      providers: [RequestService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
