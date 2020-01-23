@@ -117,7 +117,7 @@ stages:
           artifactName: 'calculator-tdd-anuglar'
           targetPath: 'www'
 
-      - script: echo Deploying the code! $FIREBASE_TOKEN
+      - script: echo Deploying the code! $(FIREBASE_TOKEN) -  $FIREBASE_TOKEN
       - script: ls -la
-      - script: npx firebase deploy --token $FIREBASE_TOKEN
+      - script: npx firebase deploy --token $(FIREBASE_TOKEN)
       
