@@ -22,7 +22,7 @@ export class PaginatorComponent implements OnInit {
   @Input()
   set _arrayLength(arrayLength: number) {
     this.arrayLength = arrayLength;
-    this.itemsArray = [...Array(this.arrayLength).keys()];
+    this.itemsArray = Array.from({ length: arrayLength }, (x, i) => i);
     this.itemActive = this.itemsArray[0];
   }
 
