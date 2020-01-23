@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MathOperationsListComponent } from './math-operations-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RequestService } from '../request.service';
+import { RequestService } from '../../request.service';
 
 describe('MathOperationsListComponent', () => {
   let component: MathOperationsListComponent;
