@@ -64,7 +64,7 @@ describe('Tab2Page', () => {
     component.displayValue = '666';
     fixture.detectChanges();
     const element = document.querySelector('.background__image') as HTMLElement;
-    expect(element.style.backgroundImage).toContain('demon');
+    expect(element.classList).toContain('demon-background');
   });
 
 
@@ -72,6 +72,6 @@ describe('Tab2Page', () => {
     component.displayValue = '42';
     fixture.detectChanges();
     const element = document.querySelector('.background__image') as HTMLElement;
-    expect(element.style.backgroundImage).toContain('god');
+    expect(element.classList).toContain('god-background');
   });
 });

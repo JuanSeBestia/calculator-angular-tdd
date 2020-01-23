@@ -13,6 +13,6 @@ import { MathOperationsListComponent } from '../math-operations-list/math-operat
     FormsModule,
     RouterModule.forChild([{ path: '', component: Tab1Page }]),
   ],
-  declarations: [Tab1Page, MathOperationsListComponent,]
+  declarations: [Tab1Page, MathOperationsListComponent, ]
 })
 export class Tab1PageModule { }
