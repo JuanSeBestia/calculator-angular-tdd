@@ -60,4 +60,4 @@
 
 ### 2. No funcional requirements
 
-  4. I as manager want to now if main requiremnts continuing working
+  4. I as manager want to know if main requirements continue working
