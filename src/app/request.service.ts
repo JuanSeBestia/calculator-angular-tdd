@@ -28,9 +28,8 @@ export class RequestService {
   }
 
 
-  public getMathOperationsList(params?: string): Observable<CalculatorModel> {
-    const sendParams = params ? { params: new HttpParams({ fromString: params }) } : {};
-    return this.http.get<CalculatorModel>(`${BASE_URL}/mathOperation`, sendParams)
+  public getMathOperationsList(params?): Observable<CalculatorModel> {
+    return this.http.get<CalculatorModel>(`${BASE_URL}/mathOperation`, { params })
       .pipe(
         catchError(this.handleError)
       );
