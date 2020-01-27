@@ -57,3 +57,7 @@
   2. I as the user want to use one input to put my name
 
   3. I as the user want to see the opreation that I maked inside a table
+
+### 2. No funcional requirements
+
+  4. I as manager want to know if main requirements continue working
