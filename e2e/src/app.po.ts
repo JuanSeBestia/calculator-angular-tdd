@@ -16,22 +16,26 @@ export class AppPage {
   getButtonN7() {
     return element(by.cssContainingText('.number-button', '7'));
   }
-  
+
   getButtonN2() {
     return element(by.cssContainingText('.number-button', '2'));
   }
 
-  getPlusButton(){
+  getPlusButton() {
     return element(by.cssContainingText('.number-button', '+'));
   }
-  
-  getEqualButton(){
+
+  getDivideButton() {
+    return element(by.cssContainingText('.number-button', '/'));
+  }
+
+  getEqualButton() {
     return element(by.cssContainingText('.inner-button', '='));
   }
-  
-  getDisplay(){
+
+  getDisplay() {
     return element(by.css('.displayValue'));
   }
 
-  
+
 }
