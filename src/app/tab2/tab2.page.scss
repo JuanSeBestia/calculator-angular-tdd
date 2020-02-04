@@ -134,11 +134,26 @@ ion-input{
   justify-content: center;
 }
 
-ion-item{
-  --background: rgba(6,6,6, 0.6);
-  --color: #fff;
-  border-radius: 5px;
-}
-ion-input{
-  --background: transparent;
+.vertical-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 100%;
+  * {
+    z-index: 500;
+  }
+  
+  ion-item{
+    --background: rgba(6,6,6, 0.6);
+    --color: #fff;
+    border-radius: 5px;
+    ion-label {
+      --color: #ec9770;
+    }
+  }
+  ion-input{
+    --background: transparent;
+  }
 }
