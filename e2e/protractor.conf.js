@@ -1,23 +1,26 @@
+// @ts-check
+// Protractor configuration file, see link for more information
+// https://github.com/angular/protractor/blob/master/lib/config.ts
+
 const { SpecReporter } = require('jasmine-spec-reporter');
-const { JUnitXmlReporter } = require('jasmine-reporters');
 
-process.env.CHROME_BIN = process.env.CHROME_BIN || require("puppeteer").executablePath();
-
+/**
+ * @type { import("protractor").Config }
+ */
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome',
-
+    browserName: 'chrome',
     chromeOptions: {
-      args: ["--headless", "--disable-gpu", "--window-size=1200,900", '--no-sandbox'],
-      binary: process.env.CHROME_BIN
+      binary: process.env.CHROME_BIN,
+      args: ['--headless', '--no-sandbox']
     }
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'http://localhost:4210/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
@@ -29,10 +32,5 @@ exports.config = {
       project: require('path').join(__dirname, './tsconfig.json')
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
-    var junitReporter = new JUnitXmlReporter({
-      savePath: require('path').join(__dirname, './junit'),
-      consolidateAll: true
-    });
-    jasmine.getEnv().addReporter(junitReporter);
   }
 };
