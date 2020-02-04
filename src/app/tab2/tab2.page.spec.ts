@@ -6,6 +6,9 @@ import { DisplayComponent } from '../components/display/display.component';
 import { NumberButtonComponent } from '../components/number-button/number-button.component';
 import { ResultBtnComponent } from '../components/result-btn/result-btn.component';
 import { CleanBtnComponent } from '../components/clean-btn/clean-btn.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 
 describe('Tab2Page', () => {
@@ -15,8 +18,8 @@ describe('Tab2Page', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Tab2Page, DisplayComponent, NumberButtonComponent, ResultBtnComponent,
-        CleanBtnComponent],
-      imports: [IonicModule.forRoot()]
+        CleanBtnComponent,],
+      imports: [IonicModule.forRoot(), CommonModule, FormsModule, HttpClientTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(Tab2Page);

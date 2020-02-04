@@ -1,9 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
 import { CalculatorService } from './calculator.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CalculatorService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => TestBed.configureTestingModule({ imports: [HttpClientTestingModule] }));
 
   it('should be created', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
