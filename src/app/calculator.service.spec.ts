@@ -44,7 +44,13 @@ describe('CalculatorService', () => {
 
   it('should contain a new value after the value "Sintax Error is Displayed"', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
-    service.setCurrentValue('Syntax Error9');
+    service.setCurrentValue('Syntax Error');
     expect(service.getResult().includes('Syntax Error')).toBe(false);
+  });
+
+  it('should reset the value to an empty string', () => {
+    const service: CalculatorService = TestBed.get(CalculatorService);
+    service.clean();
+    expect(service.getCurrentValue()).toBe('');
   });
 });
