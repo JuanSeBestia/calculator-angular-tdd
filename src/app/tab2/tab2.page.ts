@@ -40,7 +40,8 @@ export class Tab2Page {
 
 
   saveResult() {
-    if (this.name && this.name.length > 0)
+    if (this.name && this.name.length > 0) {
       this.calculatorService.saveResult(this.name);
+    }
   }
 }
