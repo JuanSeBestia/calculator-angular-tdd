@@ -36,7 +36,7 @@ export class RequestService {
   }
 
 
-  public createMathOperation(mathOperation: CalculatorModel) {
+  public createMathOperation(mathOperation: CalculatorDataModel) {
     return this.http.post(`${BASE_URL}/mathOperation`, mathOperation)
       .pipe(
         catchError(this.handleError)
