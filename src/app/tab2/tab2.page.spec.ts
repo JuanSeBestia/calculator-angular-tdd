@@ -18,7 +18,7 @@ describe('Tab2Page', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Tab2Page, DisplayComponent, NumberButtonComponent, ResultBtnComponent,
-        CleanBtnComponent,],
+        CleanBtnComponent, ],
       imports: [IonicModule.forRoot(), CommonModule, FormsModule, HttpClientTestingModule]
     }).compileComponents();
 
