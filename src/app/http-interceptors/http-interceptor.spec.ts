@@ -39,7 +39,7 @@ describe('HttpInterceptor', () => {
   });
 
   it('should handle error', () => {
-    const interceptor = new MyInterceptor();
+    const interceptor = new MyInterceptor() as any;
     // "as any" to avoid the "private method" type errors
     spyOn(interceptor as any, 'handleError');
     const mockErrorResponse = {
@@ -61,7 +61,7 @@ describe('HttpInterceptor', () => {
 
 
   it('should call presentAlertError error', () => {
-    const interceptor = new MyInterceptor();
+    const interceptor = new MyInterceptor() as any;
     // "as any" to avoid the "private method" type errors
     spyOn(interceptor as any, 'presentErrorAlert').and.callThrough();
     const mockErrorResponse = new HttpErrorResponse({
