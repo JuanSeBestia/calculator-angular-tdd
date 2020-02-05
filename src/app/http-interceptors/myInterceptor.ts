@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { tap, catchError } from 'rxjs/operators';
 import {
-  HttpRequest,
-  HttpHandler,
-  HttpInterceptor,
-  HttpHeaders,
+    HttpRequest,
+    HttpHandler,
+    HttpInterceptor,
+    HttpHeaders,
+    HttpErrorResponse,
 } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable()
 
@@ -21,6 +23,24 @@ export class MyInterceptor implements HttpInterceptor {
             headers,
         });
 
-        return next.handle(newReq);
+        return next.handle(newReq).pipe(
+            catchError(this.handleError)
+        );
+    }
+
+
+    private handleError(error: HttpErrorResponse) {
+        if (error.error instanceof ErrorEvent) {
+            this.presentErrorAlert(error.error.message);
+        } else {
+            this.presentErrorAlert(`Backend Error ${error.error}). Error code ${error.status}`);
+        }
+
+        return Observable.throw(error.message || 'Server Error!');
+    }
+
+
+    private presentErrorAlert(message) {
+        alert(message);
     }
 }
