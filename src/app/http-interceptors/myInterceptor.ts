@@ -4,10 +4,10 @@ import {
     HttpRequest,
     HttpHandler,
     HttpInterceptor,
-    HttpHeaders,
     HttpErrorResponse,
+    HttpEvent,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable()
 
@@ -15,16 +15,13 @@ export class MyInterceptor implements HttpInterceptor {
     constructor() {
     }
 
-    intercept(req: HttpRequest<any>, next: HttpHandler) {
-        const headers = new HttpHeaders();
-        headers.set('Content-Type', 'application/json');
-
-        const newReq = req.clone({
-            headers,
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        const newRequest = req.clone({
+            headers: req.headers.set('Content-Type', 'application/json'),
         });
 
-        return next.handle(newReq).pipe(
-            catchError(this.handleError)
+        return next.handle(newRequest).pipe(
+            catchError((error: HttpErrorResponse) => this.handleError(error))
         );
     }
 
@@ -33,10 +30,10 @@ export class MyInterceptor implements HttpInterceptor {
         if (error.error instanceof ErrorEvent) {
             this.presentErrorAlert(error.error.message);
         } else {
-            this.presentErrorAlert(`Backend Error ${error.error}). Error code ${error.status}`);
+            this.presentErrorAlert(`Backend Error ${error.error}. Error code ${error.status}`);
         }
 
-        return Observable.throw(error.message || 'Server Error!');
+        return throwError(error.message || 'Server Error!');
     }
 
 
