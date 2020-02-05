@@ -41,7 +41,7 @@ describe('RequestService', () => {
     });
 
     const request = httpTestingController.expectOne('https://calculator-node-tdd.herokuapp.com/mathOperation');
-    expect(request.request.method).toEqual("GET");
+    expect(request.request.method).toEqual('GET');
 
     request.flush(testData);
 
@@ -53,7 +53,7 @@ describe('RequestService', () => {
     const mockErrorResponse = {
       status: 400,
       statusText: 'Unknown Error'
-    }
+    };
 
     const data = 'Bad Request';
 
@@ -64,7 +64,7 @@ describe('RequestService', () => {
         expect(err.error).toEqual(data, 'Bad Request');
       });
     const request = httpTestingController.expectOne('https://calculator-node-tdd.herokuapp.com/mathOperation');
-    expect(request.request.method).toEqual("GET");
+    expect(request.request.method).toEqual('GET');
     request.flush(data, mockErrorResponse);
     httpTestingController.verify();
   });
@@ -74,7 +74,7 @@ describe('RequestService', () => {
     const mockErrorResponse = {
       status: 400,
       statusText: 'Unknown Error'
-    }
+    };
 
     const data = 'Bad Request';
     const mathOperation: CalculatorDataModel = {
@@ -82,7 +82,7 @@ describe('RequestService', () => {
       result: '10',
       date: new Date(),
       username: ''
-    }
+    };
 
     service.createMathOperation(mathOperation).subscribe(
       res => { }, // Response doesn't mind for now
@@ -91,7 +91,7 @@ describe('RequestService', () => {
         expect(err.error).toEqual(data, 'Bad Request');
       });
     const request = httpTestingController.expectOne('https://calculator-node-tdd.herokuapp.com/mathOperation');
-    expect(request.request.method).toEqual("POST");
+    expect(request.request.method).toEqual('POST');
     request.flush(data, mockErrorResponse);
     httpTestingController.verify();
   });
@@ -102,24 +102,24 @@ describe('RequestService', () => {
     const mockResponse = {
       status: 200,
       statusText: 'OK'
-    }
+    };
 
     const mathOperation: CalculatorDataModel = {
       math_operation: '5+5',
       result: '10',
       date: new Date(),
       username: 'TEST'
-    }
+    };
 
     service.createMathOperation(mathOperation).subscribe(
       res => {
-        expect(res).toEqual(mathOperation)
+        expect(res).toEqual(mathOperation);
       },
     );
 
     const request = httpTestingController.expectOne('https://calculator-node-tdd.herokuapp.com/mathOperation');
-    
-    expect(request.request.method).toEqual("POST");
+
+    expect(request.request.method).toEqual('POST');
     request.flush(mathOperation, mockResponse);
     httpTestingController.verify();
   });
