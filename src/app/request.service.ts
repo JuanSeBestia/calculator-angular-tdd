@@ -13,12 +13,12 @@ export class RequestService {
   constructor(private http: HttpClient) { }
 
   public getMathOperationsList(params?): Observable<CalculatorModel> {
-    return this.http.get<CalculatorModel>(`${BASE_URL}/mathOperation`, { params })
+    return this.http.get<CalculatorModel>(`${BASE_URL}/mathOperation`, { params });
   }
 
 
   public createMathOperation(mathOperation: CalculatorDataModel) {
-    return this.http.post(`${BASE_URL}/mathOperation`, mathOperation)
+    return this.http.post(`${BASE_URL}/mathOperation`, mathOperation);
   }
 
 
