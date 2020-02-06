@@ -1,9 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
 import { CalculatorService } from './calculator.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CalculatorService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => TestBed.configureTestingModule({ imports: [HttpClientTestingModule] }));
 
   it('should be created', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
@@ -43,7 +44,13 @@ describe('CalculatorService', () => {
 
   it('should contain a new value after the value "Sintax Error is Displayed"', () => {
     const service: CalculatorService = TestBed.get(CalculatorService);
-    service.setCurrentValue('Syntax Error9');
+    service.setCurrentValue('Syntax Error');
     expect(service.getResult().includes('Syntax Error')).toBe(false);
+  });
+
+  it('should reset the value to an empty string', () => {
+    const service: CalculatorService = TestBed.get(CalculatorService);
+    service.clean();
+    expect(service.getCurrentValue()).toBe('');
   });
 });

@@ -12,9 +12,11 @@ export class Tab2Page {
   numberColor = '#fff';
   clearColor = '#ddd';
 
+  name: string;
+
   defaultBgImage = 'url("/assets/images/cofee.jpeg")';
 
-  constructor(private calculatorService: CalculatorService, ) {
+  constructor(private calculatorService: CalculatorService) {
     this.displayValue = this.calculatorService.getCurrentValue();
   }
 
@@ -28,10 +30,18 @@ export class Tab2Page {
 
   displayResult() {
     this.displayValue = this.calculatorService.getResult();
+    this.saveResult();
   }
 
 
   cleanDisplay() {
     this.displayValue = this.calculatorService.clean();
+  }
+
+
+  saveResult() {
+    if (this.name && this.name.length > 0) {
+      this.calculatorService.saveResult(this.name);
+    }
   }
 }

@@ -10,5 +10,5 @@ export interface CalculatorDataModel {
     username: string;
     date: Date;
     result: string;
-    operation: string;
+    math_operation: string;
 }
