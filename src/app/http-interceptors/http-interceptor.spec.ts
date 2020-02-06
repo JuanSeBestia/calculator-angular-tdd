@@ -1,4 +1,4 @@
-import { MyInterceptor } from './myInterceptor';
+import { ErrorInterceptor } from './ErrorInterceptor';
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RequestService } from '../request.service';
@@ -16,7 +16,7 @@ describe('HttpInterceptor', () => {
         RequestService,
         {
           provide: HTTP_INTERCEPTORS,
-          useClass: MyInterceptor,
+          useClass: ErrorInterceptor,
           multi: true,
         }
       ]
@@ -27,7 +27,7 @@ describe('HttpInterceptor', () => {
   });
 
   it('should create an instance', () => {
-    expect(new MyInterceptor()).toBeTruthy();
+    expect(new ErrorInterceptor()).toBeTruthy();
   });
 
   it('should add a Content-Type header', () => {
@@ -39,7 +39,7 @@ describe('HttpInterceptor', () => {
   });
 
   it('should handle error', () => {
-    const interceptor = new MyInterceptor() as any;
+    const interceptor = new ErrorInterceptor() as any;
     // "as any" to avoid the "private method" type errors
     spyOn(interceptor as any, 'handleError');
     const mockErrorResponse = {
@@ -61,7 +61,7 @@ describe('HttpInterceptor', () => {
 
 
   it('should call presentAlertError error', () => {
-    const interceptor = new MyInterceptor() as any;
+    const interceptor = new ErrorInterceptor() as any;
     // "as any" to avoid the "private method" type errors
     spyOn(interceptor as any, 'presentErrorAlert').and.callThrough();
     const mockErrorResponse = new HttpErrorResponse({

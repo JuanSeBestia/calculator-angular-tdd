@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { tap, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import {
     HttpRequest,
     HttpHandler,
@@ -11,7 +11,7 @@ import { Observable, throwError } from 'rxjs';
 
 @Injectable()
 
-export class MyInterceptor implements HttpInterceptor {
+export class ErrorInterceptor implements HttpInterceptor {
     constructor() {
     }
 
