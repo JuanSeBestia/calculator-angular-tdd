@@ -19,7 +19,7 @@ describe('new App', () => {
     page.getPlusButton().click();
     page.getButtonN2().click();
     page.getEqualButton().click();
-    let result = page.getDisplay();
+    const result = page.getDisplay();
     expect(result.getText()).toEqual('9');
   });
 
@@ -29,7 +29,7 @@ describe('new App', () => {
     page.getPlusButton().click();
     page.getButtonN2().click();
     page.getEqualButton().click();
-    let result = page.getDisplay();
+    const result = page.getDisplay();
     expect(result.getText()).toEqual('Syntax Error');
   });
 });
