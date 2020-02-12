@@ -1,4 +1,4 @@
-import { ErrorInterceptor } from './ErrorInterceptor';
+import { ErrorInterceptor } from './errorInterceptor';
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RequestService } from '../request.service';
