@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-<<<<<<< refs/remotes/origin/develop
 import { PaginationInformation, CalculatorDataModel } from '../calculator/models/calulator-model';
-=======
-import { CalculatorModel, CalculatorDataModel } from '../calculator/models/calulator-model';
->>>>>>> refactor: :truck: moving files (calculator files) to better organization
 import { RequestService } from '../request.service';
 
 @Component({
