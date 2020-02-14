@@ -1,17 +1,11 @@
-<<<<<<< refs/remotes/origin/develop
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CalculatorService } from '../calculator/calculator.service';
 import { AppState } from '../store/state/app.state';
-import { Store, select, } from '@ngrx/store';
-import { CalculatorDataModel } from '../calculator/models/calulator-model';
-import { Observable, fromEvent } from 'rxjs';
-import { debounceTime, distinctUntilChanged, tap, filter } from 'rxjs/operators';
+import { Store, select } from '@ngrx/store';
 import { selectCurrentOperation } from '../store/selectors/calculator.selectors';
-=======
-import { Component } from '@angular/core';
-import { CalculatorService } from '../calculator/calculator.service';
-
->>>>>>> refactor: :truck: moving files (calculator files) to better organization
+import { CalculatorDataModel } from '../calculator/models/calulator-model';
+import { Observable, of, merge } from 'rxjs';
+import { debounceTime, distinctUntilChanged, mergeMap, map, tap } from 'rxjs/operators';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -60,5 +54,24 @@ export class Tab2Page implements AfterViewInit {
 
   cleanDisplay() {
     this.calculatorService.clean();
+  }
+
+
+  updateUsername() {
+    console.log("saving?", this.name);
+    if (this.name && this.name.length > 0) {
+      of(this.name).pipe(
+        debounceTime(1000),
+        tap((name) => {
+          console.log(name, "Enterint,sdfsf");
+          this.calculatorService.saveResult(this.name)
+          //TODO fix to only update once
+        })
+      )
+    }
+  }
+
+  ngOnInit() {
+    //Here we are getting the current operation!
   }
 }

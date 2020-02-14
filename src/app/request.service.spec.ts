@@ -4,8 +4,7 @@ import { RequestService } from './request.service';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { PaginationInformation, CalculatorDataModel } from './calculator/models/calulator-model';
-import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
->>>>>>> refactor: :truck: moving files (calculator files) to better organization
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('RequestService', () => {
   let service: RequestService;
