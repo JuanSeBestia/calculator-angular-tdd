@@ -1,4 +1,4 @@
-export interface CalculatorModel {
+export interface PaginationInformation {
     data: Array<CalculatorDataModel>;
     totalPages: number;
     currentPage: number;

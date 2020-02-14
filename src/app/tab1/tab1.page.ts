@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CalculatorModel, CalculatorDataModel } from '../calculator/models/calulator-model';
+import { PaginationInformation, CalculatorDataModel } from '../calculator/models/calulator-model';
 import { RequestService } from '../request.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { RequestService } from '../request.service';
 })
 export class Tab1Page implements OnInit {
 
-  mathOperations$: Observable<CalculatorModel>;
-  items: CalculatorModel;
+  mathOperations$: Observable<PaginationInformation>;
+  items: PaginationInformation;
 
   constructor(private requestService: RequestService) { }
 
@@ -29,7 +29,7 @@ export class Tab1Page implements OnInit {
     const params = { page: page + '' };
     this.mathOperations$ = this.requestService.getMathOperationsList(params);
 
-    this.mathOperations$.subscribe((calcData: CalculatorModel) => {
+    this.mathOperations$.subscribe((calcData: PaginationInformation) => {
       this.items = calcData;
     });
   }

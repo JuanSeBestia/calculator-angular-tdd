@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { RequestService } from './request.service';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { CalculatorModel, CalculatorDataModel } from './calculator/models/calulator-model';
+import { PaginationInformation, CalculatorDataModel } from './calculator/models/calulator-model';
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 describe('RequestService', () => {
@@ -23,7 +23,7 @@ describe('RequestService', () => {
   });
 
   it('should get math operations', () => {
-    const testData: CalculatorModel = {
+    const testData: PaginationInformation = {
       data: [{
         username: 'test',
         date: new Date(),
