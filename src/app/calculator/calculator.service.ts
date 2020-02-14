@@ -1,64 +1,43 @@
 import { Injectable } from '@angular/core';
-import * as math from 'mathjs';
-import { RequestService } from '../request.service';
+import { AppState } from '../store/state/app.state';
+import { Store, select } from '@ngrx/store';
+import { CreateOperation, AddOperatorValue, SetResultValue, ClearValue, UpdateUserName } from '../store/actions/calculator.actions';
+import { selectCurrentOperation } from '../store/selectors/calculator.selectors';
+import { CalculatorDataModel } from './models/calulator-model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CalculatorService {
-  private currentValue = '';
-  private mathOperation: string;
+  mathOperation$: Observable<CalculatorDataModel>;
+  private model: CalculatorDataModel;
 
-  constructor(private requestService: RequestService) { }
+  constructor(public store$: Store<AppState>) {
+    this.mathOperation$ = this.store$.pipe(select(selectCurrentOperation));
+
+    this.mathOperation$.subscribe(info => {
+      this.model = info;
+    });
+  }
 
 
   setCurrentValue(value: string) {
-    if (value.includes('Syntax Error')) {
-      value = value.replace('Syntax Error', '');
-    }
-    this.currentValue = value;
+    this.store$.dispatch(new AddOperatorValue(value))
   }
 
-
-  getCurrentValue(): string {
-    return this.currentValue;
+  getResult() {
+    this.store$.dispatch(new SetResultValue())
   }
-
-
-  evaluateValue(value) {
-    if (value.length === 0) {
-      this.setCurrentValue('');
-    } else {
-      const expression = math.evaluate(value);
-      this.setCurrentValue(expression + '');
-    }
-  }
-
-
-  getResult(): string {
-    try {
-      this.mathOperation = this.currentValue;
-      this.evaluateValue(this.currentValue);
-      return this.getCurrentValue();
-    } catch (error) {
-      console.error('CalculatorService::getResult(), Error', error);
-      this.currentValue = 'Syntax Error';
-      return this.getCurrentValue();
-    }
-  }
-
 
   clean() {
-    this.setCurrentValue('');
-    return this.getCurrentValue();
+    this.store$.dispatch(new ClearValue())
   }
 
+
   saveResult(name) {
-    this.requestService.createMathOperation({
-      username: name,
-      date: null,
-      result: this.currentValue,
-      math_operation: this.mathOperation
-    }).subscribe();
+    console.log("saving=", name);
+
+    this.store$.dispatch(new UpdateUserName(name));
   }
 }
