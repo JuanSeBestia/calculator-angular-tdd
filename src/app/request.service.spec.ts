@@ -4,7 +4,7 @@ import { RequestService } from './request.service';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { PaginationInformation, CalculatorDataModel } from './calculator/models/calulator-model';
-import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('RequestService', () => {
   let service: RequestService;
@@ -26,7 +26,6 @@ describe('RequestService', () => {
     const testData: PaginationInformation = {
       data: [{
         username: 'test',
-        date: new Date(),
         result: '9',
         math_operation: '5+4',
       }],
@@ -80,7 +79,6 @@ describe('RequestService', () => {
     const mathOperation: CalculatorDataModel = {
       math_operation: '5+5',
       result: '10',
-      date: new Date(),
       username: ''
     };
 
@@ -107,7 +105,6 @@ describe('RequestService', () => {
     const mathOperation: CalculatorDataModel = {
       math_operation: '5+5',
       result: '10',
-      date: new Date(),
       username: 'TEST'
     };
 

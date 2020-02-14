@@ -9,18 +9,21 @@
 <ion-content>
   <div class="background">
     <div class="midground">
-      <div class="background__image"
-        [ngClass]="{'demon-background': (displayValue === '666'), 'god-background': (displayValue === '42'), 'foreground': !(displayValue === '666') && !(displayValue === '42')}">
+      <div class="background__image" [ngClass]="{
+        'demon-background': ((displayValue$| async).math_operation === '666'), 
+        'god-background': ((displayValue$| async).math_operation  === '42'), 
+        'foreground': !((displayValue$| async).math_operation === '666') 
+        && !((displayValue$| async).math_operation  === '42')}">
       </div>
       <div class="vertical-center">
         <ion-item>
           <ion-label position="stacked">Write your name in order to save your results!</ion-label>
-          <ion-input [(ngModel)]="name"></ion-input>
+          <ion-input [(ngModel)]="name" (ionChange)="updateUsername()"></ion-input>
         </ion-item>
         <ion-grid class="grid-width">
           <ion-row class="ion-justify-content-center">
             <ion-col size="12">
-              <app-display currentValue="{{displayValue}}"></app-display>
+              <app-display [currentValue]="displayValue$ | async"></app-display>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -87,7 +90,7 @@
               </app-number-button>
             </ion-col>
             <ion-col size="3">
-              <app-result-btn [color]="functionColor" (click)="displayResult()"></app-result-btn>
+              <app-result-btn [color]="functionColor" (click)="displayResult();"></app-result-btn>
             </ion-col>
             <ion-col size="3">
               <app-number-button value="/" [color]="functionColor" (numberClick)="updateDisplayValue($event)">

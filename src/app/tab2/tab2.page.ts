@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CalculatorService } from '../calculator/calculator.service';
-
+import { AppState } from '../store/state/app.state';
+import { Store, select } from '@ngrx/store';
+import { selectCurrentOperation } from '../store/selectors/calculator.selectors';
+import { CalculatorDataModel } from '../calculator/models/calulator-model';
+import { Observable, of, merge } from 'rxjs';
+import { debounceTime, distinctUntilChanged, mergeMap, map, tap } from 'rxjs/operators';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
-  displayValue: string;
+export class Tab2Page implements OnInit {
+  displayValue$: Observable<CalculatorDataModel>;
   functionColor = '#ec9770';
   numberColor = '#fff';
   clearColor = '#ddd';
@@ -16,32 +21,45 @@ export class Tab2Page {
 
   defaultBgImage = 'url("/assets/images/cofee.jpeg")';
 
-  constructor(private calculatorService: CalculatorService) {
-    this.displayValue = this.calculatorService.getCurrentValue();
+  constructor(
+    private calculatorService: CalculatorService,
+    private store$: Store<AppState>,
+  ) {
+    this.displayValue$ = this.calculatorService.mathOperation$;
+
   }
 
 
   updateDisplayValue(displayValue: string) {
-    this.displayValue += displayValue;
-    this.calculatorService.setCurrentValue(this.displayValue);
-    this.displayValue = this.calculatorService.getCurrentValue();
+    this.calculatorService.setCurrentValue(displayValue);
   }
 
 
   displayResult() {
-    this.displayValue = this.calculatorService.getResult();
-    this.saveResult();
+    this.calculatorService.getResult();
   }
 
 
   cleanDisplay() {
-    this.displayValue = this.calculatorService.clean();
+    this.calculatorService.clean();
   }
 
 
-  saveResult() {
+  updateUsername() {
+    console.log("saving?", this.name);
     if (this.name && this.name.length > 0) {
-      this.calculatorService.saveResult(this.name);
+      of(this.name).pipe(
+        debounceTime(1000),
+        tap((name) => {
+          console.log(name, "Enterint,sdfsf");
+          this.calculatorService.saveResult(this.name)
+          //TODO fix to only update once
+        })
+      )
     }
+  }
+
+  ngOnInit() {
+    //Here we are getting the current operation!
   }
 }
