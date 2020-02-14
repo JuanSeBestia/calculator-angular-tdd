@@ -1,3 +1,4 @@
+<<<<<<< refs/remotes/origin/develop
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CalculatorService } from '../calculator/calculator.service';
 import { AppState } from '../store/state/app.state';
@@ -6,6 +7,11 @@ import { CalculatorDataModel } from '../calculator/models/calulator-model';
 import { Observable, fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, tap, filter } from 'rxjs/operators';
 import { selectCurrentOperation } from '../store/selectors/calculator.selectors';
+=======
+import { Component } from '@angular/core';
+import { CalculatorService } from '../calculator/calculator.service';
+
+>>>>>>> refactor: :truck: moving files (calculator files) to better organization
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',

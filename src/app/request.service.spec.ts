@@ -3,8 +3,13 @@ import { TestBed } from '@angular/core/testing';
 import { RequestService } from './request.service';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+<<<<<<< refs/remotes/origin/develop
 import { PaginationInformation, CalculatorDataModel } from './calculator/models/calulator-model';
 import { HttpErrorResponse } from '@angular/common/http';
+=======
+import { CalculatorModel, CalculatorDataModel } from './calculator/models/calulator-model';
+import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+>>>>>>> refactor: :truck: moving files (calculator files) to better organization
 
 describe('RequestService', () => {
   let service: RequestService;
