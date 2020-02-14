@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CalculatorDataModel } from '../../calulator-model';
+import { CalculatorDataModel } from '../../calculator/models/calulator-model';
 
 @Component({
   selector: 'app-math-operations-list',

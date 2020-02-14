@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CalculatorService } from '../calculator.service';
+import { CalculatorService } from '../calculator/calculator.service';
 
 @Component({
   selector: 'app-tab2',
