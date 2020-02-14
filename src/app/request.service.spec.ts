@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { RequestService } from './request.service';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { CalculatorModel, CalculatorDataModel } from './calulator-model';
+import { CalculatorModel, CalculatorDataModel } from './calculator/models/calulator-model';
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 describe('RequestService', () => {

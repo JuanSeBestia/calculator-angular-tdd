@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as math from 'mathjs';
-import { RequestService } from './request.service';
+import { RequestService } from '../request.service';
 
 @Injectable({
   providedIn: 'root'

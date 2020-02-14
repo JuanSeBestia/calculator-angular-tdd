@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CalculatorModel, CalculatorDataModel } from '../calulator-model';
+import { CalculatorModel, CalculatorDataModel } from '../calculator/models/calulator-model';
 import { RequestService } from '../request.service';
 
 @Component({

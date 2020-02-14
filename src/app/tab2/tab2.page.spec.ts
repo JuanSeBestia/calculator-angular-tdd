@@ -2,10 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { Tab2Page } from './tab2.page';
-import { DisplayComponent } from '../components/display/display.component';
-import { NumberButtonComponent } from '../components/number-button/number-button.component';
-import { ResultBtnComponent } from '../components/result-btn/result-btn.component';
-import { CleanBtnComponent } from '../components/clean-btn/clean-btn.component';
+import { DisplayComponent } from '../calculator/components/display/display.component';
+import { NumberButtonComponent } from '../calculator/components/number-button/number-button.component';
+import { ResultBtnComponent } from '../calculator/components/result-btn/result-btn.component';
+import { CleanBtnComponent } from '../calculator/components/clean-btn/clean-btn.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
