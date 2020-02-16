@@ -18,7 +18,7 @@
       <div class="vertical-center">
         <ion-item>
           <ion-label position="stacked">Write your name in order to save your results!</ion-label>
-          <ion-input [(ngModel)]="name" (ionChange)="updateUsername()"></ion-input>
+          <ion-input #input></ion-input>
         </ion-item>
         <ion-grid class="grid-width">
           <ion-row class="ion-justify-content-center">
