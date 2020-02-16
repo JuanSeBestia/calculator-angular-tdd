@@ -10,17 +10,14 @@ import {
     SetResultValueSuccess,
     AddOperatorValue,
     ClearValue,
-    NoAction,
 } from '../actions/calculator.actions';
-import { switchMap, map, catchError, withLatestFrom, filter, tap, mergeMap } from 'rxjs/operators';
+import { switchMap, map, catchError, withLatestFrom } from 'rxjs/operators';
 import { CalculatorDataModel } from 'src/app/calculator/models/calulator-model';
 import { of } from 'rxjs';
 import { RequestService } from 'src/app/request.service';
 import * as math from 'mathjs';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { AppState } from '../state/app.state';
-import { selectCurrentOperation } from '../selectors/calculator.selectors';
-import { Action } from 'rxjs/internal/scheduler/Action';
 
 @Injectable()
 export class CalculatorEffects {
@@ -32,8 +29,12 @@ export class CalculatorEffects {
     @Effect()
     createOperation$ = this.actions$.pipe(
         ofType<CreateOperation>(EUCalculatorActions.CreateOperation),
-        switchMap((action) => {
-            return this.requestService.createMathOperation(action.payload).pipe(
+        withLatestFrom(this.store$),
+        map(([action, state]) => {
+            return state.calculator.currentOperation;
+        }),
+        switchMap((currentOperation: CalculatorDataModel) => {
+            return this.requestService.createMathOperation(currentOperation).pipe(
                 map((operation: CalculatorDataModel) => new CreateOperationSuccess(operation)),
                 catchError(error => of(new CreateOperationError(error))
                 ));
