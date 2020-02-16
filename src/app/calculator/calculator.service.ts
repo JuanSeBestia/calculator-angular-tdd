@@ -35,9 +35,7 @@ export class CalculatorService {
   }
 
 
-  saveResult(name) {
-    console.log("saving=", name);
-
+  updateUsername(name) {
     this.store$.dispatch(new UpdateUserName(name));
   }
 }
