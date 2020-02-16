@@ -51,12 +51,12 @@ export class CalculatorEffects {
         }),
         switchMap((currentOperation: CalculatorDataModel) => {
             try {
-                let result = math.evaluate(currentOperation.math_operation);                
+                let result = math.evaluate(currentOperation.math_operation);
                 return [
                     new SetResultValueSuccess(result),
-                    /* new ClearValue(), */
-                    new AddOperatorValue(result),
                     new CreateOperation(currentOperation),
+                    new ClearValue(),
+                    new AddOperatorValue(result),
                 ]
             }
             catch (error) {
@@ -64,20 +64,4 @@ export class CalculatorEffects {
             }
         }),
     )
-
-/* 
-    @Effect()
-    resetValueIfError = this.actions$.pipe(
-        ofType<AddOperatorValue>(EUCalculatorActions.AddOperatorValue),
-        withLatestFrom(this.store$),
-        map(([action, state]) => {
-            return state.calculator.currentOperation;
-        }),
-        map((currentOperation: CalculatorDataModel) => {
-            if (currentOperation.math_operation.indexOf('Syntax Error') > -1) {
-                return new ClearValue();
-            }
-            return new NoAction();
-        })
-    ) */
 }

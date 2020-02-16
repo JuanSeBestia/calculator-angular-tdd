@@ -1,6 +1,5 @@
 import { initialCalculatorState, CalculatorState } from '../state/calculator.state';
 import { CalculatorActions, EUCalculatorActions } from '../actions/calculator.actions';
-import { selectCurrentOperation } from '../selectors/calculator.selectors';
 
 
 export const calculatorReducers = (
@@ -8,16 +7,12 @@ export const calculatorReducers = (
     action: CalculatorActions
 ): CalculatorState => {
     switch (action.type) {
-        case EUCalculatorActions.CreateOperationSuccess: {
-            console.log("enter to reducer", action);
-
-            return {
-                ...state,
-                currentOperation: action.payload
-            };
-        }
         case EUCalculatorActions.AddOperatorValue: {
-            let newValue = state.currentOperation.math_operation + action.value;
+            let newValue = ''
+            if (!state.currentOperation.math_operation.includes('Syntax Error'))
+                newValue = state.currentOperation.math_operation + action.value;
+            else newValue = action.value;
+
             return {
                 ...state,
                 currentOperation: {
@@ -32,6 +27,7 @@ export const calculatorReducers = (
                 currentOperation: {
                     ...state.currentOperation,
                     math_operation: '',
+                    result: '',
                 }
             }
         }
