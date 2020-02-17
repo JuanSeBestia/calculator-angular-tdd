@@ -2,55 +2,82 @@ import { TestBed } from '@angular/core/testing';
 
 import { CalculatorService } from './calculator.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { appReducers } from '../store/reducers/app.reducers';
+import { StoreModule, Store } from '@ngrx/store';
+import { AddOperatorValue, SetResultValue, ClearValue, UpdateUserName } from '../store/actions/calculator.actions';
+import { CalculatorState } from '../store/state/calculator.state';
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { AppState } from '../store/state/app.state';
 
 describe('CalculatorService', () => {
-  beforeEach(() => TestBed.configureTestingModule({ imports: [HttpClientTestingModule] }));
+  let store: MockStore<{
+    operations: null,
+    currentOperation: {
+      math_operation: '',
+      result: '',
+      username: '',
+    }
+  }>;
+  const initialState = {
+    operations: null,
+    currentOperation: {
+      math_operation: '1+1',
+      result: '2',
+      username: 'Test',
+    }
+  }
+  let service: CalculatorService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({ imports: [HttpClientTestingModule, StoreModule.forRoot(appReducers),] })
+
+    store = TestBed.get<Store<AppState>>(Store);
+  });
 
   it('should be created', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
+    service = TestBed.get(CalculatorService);
     expect(service).toBeTruthy();
   });
 
 
-  it('should set the currentValue value', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    const value = '123';
-    service.setCurrentValue(value);
-    expect(value === service.getCurrentValue()).toBe(true);
+  it('should disptach AddOperatorAction with 1', () => {
+    const expectedAction = new AddOperatorValue('1');
+    const store = jasmine.createSpyObj<Store<AppState>>('store', ['dispatch']);
+
+    const service = new CalculatorService(store);
+    service.setCurrentValue('1');
+
+    expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
   });
 
-  it('should return 0 if the expression is empty', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    const value = '';
-    service.setCurrentValue(value);
-    expect(service.getResult()).toBe('');
+  it('should disptach SetResultValue', () => {
+    const expectedAction = new SetResultValue();
+    const store = jasmine.createSpyObj<Store<AppState>>('store', ['dispatch']);
+
+    const service = new CalculatorService(store);
+    service.getResult();
+
+    expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
   });
 
-  it('should return the mathematical value expression of currentValue', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    const value = '2+2';
-    service.setCurrentValue(value);
-    expect(service.getResult()).toBe('4');
-  });
+  it('should disptach ClearValue', () => {
+    const expectedAction = new ClearValue();
+    const store = jasmine.createSpyObj<Store<AppState>>('store', ['dispatch']);
 
-
-  it('should return "Syntax Error" if the mathematical expression is invalid', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    const value = '2+2*0.6.6';
-    service.setCurrentValue(value);
-    expect(service.getResult()).toEqual('Syntax Error');
-  });
-
-
-  it('should contain a new value after the value "Sintax Error is Displayed"', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
-    service.setCurrentValue('Syntax Error');
-    expect(service.getResult().includes('Syntax Error')).toBe(false);
-  });
-
-  it('should reset the value to an empty string', () => {
-    const service: CalculatorService = TestBed.get(CalculatorService);
+    const service = new CalculatorService(store);
     service.clean();
-    expect(service.getCurrentValue()).toBe('');
+
+    expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
   });
+
+  it('should disptach UpdateUsername', () => {
+    const expectedAction = new UpdateUserName('Test');
+    const store = jasmine.createSpyObj<Store<AppState>>('store', ['dispatch']);
+
+    const service = new CalculatorService(store);
+    service.updateUsername('Test');
+
+    expect(store.dispatch).toHaveBeenCalledWith(expectedAction);
+  });
+
 });
