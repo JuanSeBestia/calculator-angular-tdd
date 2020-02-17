@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Effect, ofType, Actions } from '@ngrx/effects';
 import {
     CreateOperation,
@@ -40,7 +40,7 @@ export class CalculatorEffects {
                 ));
         }
         ),
-    )
+    );
 
     @Effect()
     setResult$ = this.actions$.pipe(
@@ -51,17 +51,16 @@ export class CalculatorEffects {
         }),
         switchMap((currentOperation: CalculatorDataModel) => {
             try {
-                let result = math.evaluate(currentOperation.math_operation);
+                const result = math.evaluate(currentOperation.math_operation);
                 return [
                     new SetResultValueSuccess(result),
                     new CreateOperation(currentOperation),
                     new ClearValue(),
                     new AddOperatorValue(result),
-                ]
-            }
-            catch (error) {
+                ];
+            } catch (error) {
                 return [new SetResultValueError('Syntax Error')];
             }
         }),
-    )
+    );
 }

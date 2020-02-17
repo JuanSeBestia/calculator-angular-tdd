@@ -8,10 +8,12 @@ export const calculatorReducers = (
 ): CalculatorState => {
     switch (action.type) {
         case EUCalculatorActions.AddOperatorValue: {
-            let newValue = ''
-            if (!state.currentOperation.math_operation.includes('Syntax Error'))
+            let newValue = '';
+            if (!state.currentOperation.math_operation.includes('Syntax Error')) {
                 newValue = state.currentOperation.math_operation + action.value;
-            else newValue = action.value;
+            } else {
+                newValue = action.value;
+            }
 
             return {
                 ...state,
@@ -29,7 +31,7 @@ export const calculatorReducers = (
                     math_operation: '',
                     result: '',
                 }
-            }
+            };
         }
         case EUCalculatorActions.SetResultValueSuccess: {
             return {
@@ -38,7 +40,7 @@ export const calculatorReducers = (
                     ...state.currentOperation,
                     result: action.result
                 }
-            }
+            };
         }
         case EUCalculatorActions.SetResultValueError: {
             return {
@@ -48,7 +50,7 @@ export const calculatorReducers = (
                     math_operation: action.error,
                     result: action.error
                 }
-            }
+            };
         }
         case EUCalculatorActions.UpdateUsername: {
             return {
@@ -57,9 +59,9 @@ export const calculatorReducers = (
                     ...state.currentOperation,
                     username: action.username,
                 }
-            }
+            };
         }
         default:
             return state;
     }
-}
+};

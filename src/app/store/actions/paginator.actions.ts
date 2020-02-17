@@ -19,7 +19,7 @@ export class GetPaginatorSuccess implements Action {
 
 export class GetPaginatorError implements Action {
     public readonly type = EUPaginatorActions.GetPaginatorError;
-    constructor(public payload: string) { } //Error String
+    constructor(public payload: string) { } // Error String
 }
 
 export type PaginatorActions = GetPaginator | GetPaginatorSuccess | GetPaginatorError;

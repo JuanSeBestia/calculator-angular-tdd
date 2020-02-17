@@ -10,9 +10,9 @@ export const paginatorReducers = (
             return {
                 ...state,
                 paginator: action.payload
-            }
+            };
         }
         default:
             return state;
     }
-}
+};

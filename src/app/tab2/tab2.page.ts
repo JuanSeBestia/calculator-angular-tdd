@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CalculatorService } from '../calculator/calculator.service';
 import { AppState } from '../store/state/app.state';
 import { Store, select, } from '@ngrx/store';
@@ -11,7 +11,7 @@ import { selectCurrentOperation } from '../store/selectors/calculator.selectors'
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements AfterViewInit {
   @ViewChild('input', { static: true, read: ElementRef }) input: ElementRef;
   displayValue$: Observable<CalculatorDataModel>;
   functionColor = '#ec9770';
@@ -38,7 +38,7 @@ export class Tab2Page {
       tap((text: any) => {
         this.calculatorService.updateUsername(this.input.nativeElement.value);
       })
-    ).subscribe()
+    ).subscribe();
   }
 
 
