@@ -16,3 +16,7 @@ export const paginatorReducers = (
             return state;
     }
 };
+
+export function reducerPaginator(state: PaginatorState, action: PaginatorActions) {
+    return paginatorReducers(state, action);
+}

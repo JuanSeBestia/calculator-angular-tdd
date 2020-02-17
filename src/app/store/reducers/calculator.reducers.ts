@@ -1,7 +1,6 @@
 import { initialCalculatorState, CalculatorState } from '../state/calculator.state';
 import { CalculatorActions, EUCalculatorActions } from '../actions/calculator.actions';
 
-
 export const calculatorReducers = (
     state = initialCalculatorState,
     action: CalculatorActions
@@ -65,3 +64,8 @@ export const calculatorReducers = (
             return state;
     }
 };
+
+
+export function reducerCalculator(state: CalculatorState | undefined, action: CalculatorActions){
+    return calculatorReducers(state, action);
+}
