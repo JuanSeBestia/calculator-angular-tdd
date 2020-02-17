@@ -1,10 +1,11 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CalculatorService } from '../calculator/calculator.service';
 import { AppState } from '../store/state/app.state';
-import { Store, } from '@ngrx/store';
+import { Store, select, } from '@ngrx/store';
 import { CalculatorDataModel } from '../calculator/models/calulator-model';
 import { Observable, fromEvent } from 'rxjs';
-import { debounceTime, distinctUntilChanged, mergeMap, map, tap, filter } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, tap, filter } from 'rxjs/operators';
+import { selectCurrentOperation } from '../store/selectors/calculator.selectors';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -27,17 +28,6 @@ export class Tab2Page {
 
   ) {
     this.displayValue$ = this.store.pipe(select(selectCurrentOperation));
-  }
-
-  ngAfterViewInit() {
-    fromEvent(this.input.nativeElement, 'keyup').pipe(
-      filter(Boolean),
-      debounceTime(150),
-      distinctUntilChanged(),
-      tap((text: any) => {
-        this.calculatorService.updateUsername(this.input.nativeElement.value);
-      })
-    ).subscribe();
   }
 
   ngAfterViewInit() {
