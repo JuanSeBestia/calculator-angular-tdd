@@ -11,7 +11,7 @@ import {
     AddOperatorValue,
     ClearValue,
 } from '../actions/calculator.actions';
-import { switchMap, map, catchError, withLatestFrom } from 'rxjs/operators';
+import { switchMap, map, catchError, withLatestFrom, filter } from 'rxjs/operators';
 import { CalculatorDataModel } from 'src/app/calculator/models/calulator-model';
 import { of } from 'rxjs';
 import { RequestService } from 'src/app/request.service';
@@ -33,6 +33,7 @@ export class CalculatorEffects {
         map(([action, state]) => {
             return state.calculator.currentOperation;
         }),
+        filter(currentOperation => currentOperation.username.length > 0),
         switchMap((currentOperation: CalculatorDataModel) => {
             return this.requestService.createMathOperation(currentOperation).pipe(
                 map((operation: CalculatorDataModel) => new CreateOperationSuccess(operation)),
