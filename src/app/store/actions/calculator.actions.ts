@@ -10,7 +10,6 @@ export enum EUCalculatorActions {
     SetResultValueSuccess = '[Calculator] Set the result of the operation success',
     SetResultValueError = '[Calculator] Set the result of the operation error',
     ClearValue = '[Calculator] Set Value as empty',
-    NoAction = '[Calculator] Set no action',
     UpdateUsername = '[Calculator] UpdateUserName',
 }
 
@@ -56,9 +55,6 @@ export class ClearValue implements Action {
     public readonly type = EUCalculatorActions.ClearValue;
 }
 
-export class NoAction implements Action {
-    public readonly type = EUCalculatorActions.NoAction;
-}
 
 export class UpdateUserName implements Action {
     public readonly type = EUCalculatorActions.UpdateUsername;
