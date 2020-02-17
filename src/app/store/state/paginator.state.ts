@@ -6,4 +6,4 @@ export interface PaginatorState {
 
 export const initialPaginatorState: PaginatorState = {
     paginator: null,
-}
+};

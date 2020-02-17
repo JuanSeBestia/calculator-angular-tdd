@@ -11,7 +11,7 @@ export interface AppState {
 export const initialAppState: AppState = {
     calculator: initialCalculatorState,
     paginator: initialPaginatorState,
-}
+};
 
 export function getInitialState(): AppState {
     return initialAppState;

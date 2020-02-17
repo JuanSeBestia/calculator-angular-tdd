@@ -12,4 +12,4 @@ export const initialCalculatorState: CalculatorState = {
         result: '',
         username: '',
     }
-}
+};

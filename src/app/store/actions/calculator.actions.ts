@@ -10,8 +10,8 @@ export enum EUCalculatorActions {
     SetResultValueSuccess = '[Calculator] Set the result of the operation success',
     SetResultValueError = '[Calculator] Set the result of the operation error',
     ClearValue = '[Calculator] Set Value as empty',
-    NoAction = "[Calculator] Set no action",
-    UpdateUsername = '[Calculator] UpdateUserName', 
+    NoAction = '[Calculator] Set no action',
+    UpdateUsername = '[Calculator] UpdateUserName',
 }
 
 export class CreateOperation implements Action {
@@ -62,7 +62,7 @@ export class NoAction implements Action {
 
 export class UpdateUserName implements Action {
     public readonly type = EUCalculatorActions.UpdateUsername;
-    constructor(public username: string){}
+    constructor(public username: string) {}
 }
 
 export type CalculatorActions = CreateOperation | CreateOperationSuccess | CreateOperationError |

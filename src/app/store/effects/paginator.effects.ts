@@ -1,6 +1,6 @@
 
 
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Store, } from '@ngrx/store';
 import { Effect, ofType, Actions } from '@ngrx/effects';
 import { AppState } from '../state/app.state';
@@ -27,5 +27,5 @@ export class PaginatorEffects {
                 catchError(error => of(new GetPaginatorError(error))
                 ))
         ),
-    )
+    );
 }

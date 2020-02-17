@@ -28,11 +28,11 @@ describe('DisplayComponent', () => {
 
 
   it('should render current value as 0', async () => {
-    let mockOperation: CalculatorDataModel = {
+    const mockOperation: CalculatorDataModel = {
       math_operation: '0',
       result: '',
       username: '',
-    }
+    };
     component.currentValue = mockOperation;
     fixture.detectChanges();
     const compontentNe = fixture.debugElement.nativeElement;
@@ -40,11 +40,11 @@ describe('DisplayComponent', () => {
   });
 
   it('should render current value as 1+2', async () => {
-    let mockOperation: CalculatorDataModel = {
+    const mockOperation: CalculatorDataModel = {
       math_operation: '1+2',
       result: '',
       username: '',
-    }
+    };
     component.currentValue = mockOperation;
     fixture.detectChanges();
     const componentNe = fixture.debugElement.nativeElement;
