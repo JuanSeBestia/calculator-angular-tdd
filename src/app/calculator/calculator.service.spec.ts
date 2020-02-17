@@ -10,32 +10,13 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { AppState } from '../store/state/app.state';
 
 describe('CalculatorService', () => {
-  let store: MockStore<{
-    operations: null,
-    currentOperation: {
-      math_operation: '',
-      result: '',
-      username: '',
-    }
-  }>;
-  const initialState = {
-    operations: null,
-    currentOperation: {
-      math_operation: '1+1',
-      result: '2',
-      username: 'Test',
-    }
-  }
-  let service: CalculatorService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ imports: [HttpClientTestingModule, StoreModule.forRoot(appReducers),] })
-
-    store = TestBed.get<Store<AppState>>(Store);
+    TestBed.configureTestingModule({ imports: [HttpClientTestingModule, StoreModule.forRoot(appReducers), ] });
   });
 
   it('should be created', () => {
-    service = TestBed.get(CalculatorService);
+    const service = TestBed.get(CalculatorService);
     expect(service).toBeTruthy();
   });
 

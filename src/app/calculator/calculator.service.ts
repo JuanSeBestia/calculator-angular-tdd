@@ -12,15 +12,15 @@ export class CalculatorService {
   }
 
   setCurrentValue(value: string) {
-    this.store$.dispatch(new AddOperatorValue(value))
+    this.store$.dispatch(new AddOperatorValue(value));
   }
 
   getResult() {
-    this.store$.dispatch(new SetResultValue())
+    this.store$.dispatch(new SetResultValue());
   }
 
   clean() {
-    this.store$.dispatch(new ClearValue())
+    this.store$.dispatch(new ClearValue());
   }
 
   updateUsername(name) {
