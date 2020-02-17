@@ -66,6 +66,6 @@ export const calculatorReducers = (
 };
 
 
-export function reducerCalculator(state: CalculatorState | undefined, action: CalculatorActions){
+export function reducerCalculator(state: CalculatorState | undefined, action: CalculatorActions) {
     return calculatorReducers(state, action);
 }
