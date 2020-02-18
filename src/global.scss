@@ -28,3 +28,33 @@
 .no-scroll {
     --overflow: hidden;
 }
+
+.snackbar-success {
+    background-color: deepskyblue;
+}
+
+.snackbar-error {
+    background-color: darkred;
+}
+
+.snackbar{ 
+    color: white;
+    position: absolute;
+    bottom: 65px;
+}
+
+.mat-simple-snackbar {
+    align-items: center;
+}
+
+.cdk-overlay-pane {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.mat-snack-bar-container{
+    margin: 0 !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+  }
