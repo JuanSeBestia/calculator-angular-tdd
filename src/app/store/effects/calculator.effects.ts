@@ -24,7 +24,7 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 export class CalculatorEffects {
 
     constructor(private actions$: Actions, public requestService: RequestService, public store$: Store<AppState>,
-        private snackBar: MatSnackBar) {
+                private snackBar: MatSnackBar) {
 
     }
 
@@ -76,9 +76,9 @@ export class CalculatorEffects {
                 verticalPosition: 'bottom',
                 horizontalPosition: 'end',
                 panelClass: ['snackbar', 'snackbar-success']
-            })
+            });
         }),
-    )
+    );
 
     @Effect({ dispatch: false })
     successEffectError = this.actions$.pipe(
@@ -89,7 +89,7 @@ export class CalculatorEffects {
                 verticalPosition: 'bottom',
                 horizontalPosition: 'end',
                 panelClass: ['snackbar', 'snackbar-error']
-            })
+            });
         }),
-    )
+    );
 }
