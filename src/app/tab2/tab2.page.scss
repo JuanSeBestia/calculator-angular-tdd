@@ -5,6 +5,7 @@ ion-col {
 
 .grid-width {
   max-width: 320px;
+  min-width: 320px;
   margin-top: 20px;
   flex: none;
 }
@@ -163,3 +164,5 @@ ion-input{
     --background: transparent;
   }
 }
+
+
