@@ -49,7 +49,7 @@ describe('DisplayComponent', () => {
     fixture.detectChanges();
     const componentNe = fixture.debugElement.nativeElement;
     expect(componentNe.querySelector('.displayValue').textContent).toContain('1+2');
-  }); */
+  });
 
   it('should render current value as an empty string \'\'', async () => {
     component.currentValue = null;
