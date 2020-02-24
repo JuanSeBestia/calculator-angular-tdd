@@ -29,7 +29,7 @@ export class CalculatorService {
     if (value.length === 0) {
       this.setCurrentValue('');
     } else {
-      const expression = math.evaluate(value);
+      const expression = math.eval(value);
       this.setCurrentValue(expression + '');
     }
   }
