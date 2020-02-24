@@ -93,5 +93,5 @@ describe('Tab2Page', () => {
     fixture.detectChanges();
     const element = document.querySelector('.background__image') as HTMLElement;
     expect(element.classList).toContain('god-background');
-  });
+  }); */
 });
