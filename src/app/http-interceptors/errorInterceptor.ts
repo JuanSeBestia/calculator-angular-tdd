@@ -27,6 +27,6 @@ export class ErrorInterceptor implements HttpInterceptor {
 
 
     private handleError(error: HttpErrorResponse) {
-        return throwError(error.message || 'Server Error!');
+        return throwError(error);
     }
 }

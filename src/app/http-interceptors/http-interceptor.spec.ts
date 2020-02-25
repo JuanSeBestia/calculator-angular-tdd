@@ -2,7 +2,7 @@ import { ErrorInterceptor } from './errorInterceptor';
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RequestService } from '../request.service';
-import { HTTP_INTERCEPTORS, HttpErrorResponse } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 describe('HttpInterceptor', () => {
@@ -58,22 +58,4 @@ describe('HttpInterceptor', () => {
     const request = httpMock.expectOne('https://calculator-node-tdd.herokuapp.com/mathOperation');
     request.flush(mockErrorResponse);
   });
-
-
-  it('should call presentAlertError error', () => {
-    const interceptor = new ErrorInterceptor() as any;
-    // "as any" to avoid the "private method" type errors
-    spyOn(interceptor as any, 'presentErrorAlert').and.callThrough();
-    const mockErrorResponse = new HttpErrorResponse({
-      error: 'error',
-      status: 400,
-      statusText: 'Unknown Error',
-    });
-
-    interceptor.handleError(mockErrorResponse);
-
-    expect(interceptor.presentErrorAlert).toHaveBeenCalledWith('Backend Error error. Error code 400');
-
-  });
-
 });
