@@ -27,17 +27,6 @@ export class ErrorInterceptor implements HttpInterceptor {
 
 
     private handleError(error: HttpErrorResponse) {
-        if (error.error instanceof ErrorEvent) {
-            this.presentErrorAlert(error.error.message);
-        } else {
-            this.presentErrorAlert(`Backend Error ${error.error}. Error code ${error.status}`);
-        }
-
         return throwError(error.message || 'Server Error!');
-    }
-
-
-    private presentErrorAlert(message) {
-        alert(message);
     }
 }

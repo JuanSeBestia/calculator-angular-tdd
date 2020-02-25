@@ -11,14 +11,14 @@ import {
     AddOperatorValue,
     ClearValue,
 } from '../actions/calculator.actions';
-import { switchMap, map, catchError, withLatestFrom, filter } from 'rxjs/operators';
+import { switchMap, map, catchError, withLatestFrom, filter, tap } from 'rxjs/operators';
 import { CalculatorDataModel } from 'src/app/calculator/models/calulator-model';
 import { of } from 'rxjs';
 import { RequestService } from 'src/app/request.service';
 import * as math from 'mathjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../state/app.state';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable()
 export class CalculatorEffects {
