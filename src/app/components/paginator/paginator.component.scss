@@ -2,7 +2,6 @@ button {
     border-radius: 100%;
     margin: 10px 5px;
     background: #ec9770;
-    background: radial-gradient(circle, #ec9770, rgba(236,151,112,0.5));
     padding: 10px;
     color: #fff;
     width: 35px;
@@ -13,7 +12,7 @@ button {
     0px 15px 10px rgba(0,0,0,0.05);
     transition: ease-in 0.5ms;
 }
-button:hover:not(.active) {
+button:hover:not(.active):not(.button-control) {
     animation-name: bg-animation;
     animation-duration: 0.4s;
     background: radial-gradient(circle, var(--ion-color-tertiary) 100%, var(--ion-color-primary) 100%);
@@ -63,3 +62,10 @@ button:active{
     font-weight: bold;
 }
 
+.button-control{
+    background-color: #3f5666;
+    color: white;
+    &:disabled{
+        background-color: lightgray;
+    }
+}

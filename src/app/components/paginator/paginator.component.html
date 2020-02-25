@@ -1,3 +1,13 @@
-<button [ngClass]="page === itemActive ? 'active' : ''" *ngFor="let page of itemsArray" class="page-btn" (click)="changePage(page)">
-  <span>{{page + 1}}</span>
+<button (click)="prev()" class="button-control" [disabled]="currentPage === 1">
+  <!-- '<' value escaped -->
+  &lt;
+</button>
+<button [ngClass]="page === currentPage ? 'active' : ''" *ngFor="let page of itemsArray" class="page-btn"
+  (click)="changePage(page)">
+  <span>{{page}}</span>
+</button>
+<button (click)="next()" class="button-control"
+  [disabled]="((totalPages <= numberOfButtons) ? (currentPage === totalPages ? true : false) : (currentPage === totalPages - 1 ? true : false))">
+  <!-- '>' value escaped-->
+  &gt;
 </button>
