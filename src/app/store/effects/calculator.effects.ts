@@ -52,7 +52,7 @@ export class CalculatorEffects {
         }),
         switchMap((currentOperation: CalculatorDataModel) => {
             try {
-                const result = math.evaluate(currentOperation.math_operation);
+                const result = math.eval(currentOperation.math_operation);
                 return [
                     new SetResultValueSuccess(result),
                     new CreateOperation(currentOperation),
