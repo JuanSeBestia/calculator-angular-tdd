@@ -1,4 +1,4 @@
-export interface CalculatorModel {
+export interface PaginationInformation {
     data: Array<CalculatorDataModel>;
     totalPages: number;
     currentPage: number;
@@ -8,7 +8,6 @@ export interface CalculatorModel {
 
 export interface CalculatorDataModel {
     username: string;
-    date: Date;
     result: string;
     math_operation: string;
 }

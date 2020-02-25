@@ -3,6 +3,8 @@ import {
   OnInit,
   Input,
 } from '@angular/core';
+import { CalculatorDataModel } from '../../models/calulator-model';
+import { Observer } from 'rxjs';
 
 
 @Component({
@@ -12,10 +14,11 @@ import {
 })
 export class DisplayComponent implements OnInit {
 
-  @Input() currentValue: string;
+  @Input() currentValue: CalculatorDataModel;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
 }
