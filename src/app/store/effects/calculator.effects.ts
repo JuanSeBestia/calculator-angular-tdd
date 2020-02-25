@@ -18,7 +18,7 @@ import { RequestService } from 'src/app/request.service';
 import * as math from 'mathjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../state/app.state';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Injectable()
 export class CalculatorEffects {
