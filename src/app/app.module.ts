@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { httpInterceptorsProviders } from './http-interceptors';
 import { RequestService } from './request.service';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreModule, Store } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 import { appReducers } from './store/reducers/app.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CalculatorEffects } from './store/effects/calculator.effects';
@@ -19,6 +19,8 @@ import { PaginatorEffects } from './store/effects/paginator.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +34,8 @@ import { environment } from 'src/environments/environment';
     EffectsModule.forRoot([CalculatorEffects, PaginatorEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [
     StatusBar,

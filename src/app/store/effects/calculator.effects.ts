@@ -11,18 +11,20 @@ import {
     AddOperatorValue,
     ClearValue,
 } from '../actions/calculator.actions';
-import { switchMap, map, catchError, withLatestFrom, filter } from 'rxjs/operators';
+import { switchMap, map, catchError, withLatestFrom, filter, tap } from 'rxjs/operators';
 import { CalculatorDataModel } from 'src/app/calculator/models/calulator-model';
 import { of } from 'rxjs';
 import { RequestService } from 'src/app/request.service';
 import * as math from 'mathjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../state/app.state';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable()
 export class CalculatorEffects {
 
-    constructor(private actions$: Actions, public requestService: RequestService, public store$: Store<AppState>) {
+    constructor(private actions$: Actions, public requestService: RequestService, public store$: Store<AppState>,
+                private snackBar: MatSnackBar) {
 
     }
 
@@ -62,6 +64,32 @@ export class CalculatorEffects {
             } catch (error) {
                 return [new SetResultValueError('Syntax Error')];
             }
+        }),
+    );
+
+    @Effect({ dispatch: false })
+    successEffect = this.actions$.pipe(
+        ofType(EUCalculatorActions.CreateOperationSuccess),
+        tap(() => {
+            this.snackBar.open('Result saved!', null, {
+                duration: 3000,
+                verticalPosition: 'bottom',
+                horizontalPosition: 'end',
+                panelClass: ['snackbar', 'snackbar-success']
+            });
+        }),
+    );
+
+    @Effect({ dispatch: false })
+    successEffectError = this.actions$.pipe(
+        ofType(EUCalculatorActions.CreateOperationError),
+        tap(() => {
+            this.snackBar.open('Error saving result', null, {
+                duration: 3000,
+                verticalPosition: 'bottom',
+                horizontalPosition: 'end',
+                panelClass: ['snackbar', 'snackbar-error']
+            });
         }),
     );
 }
