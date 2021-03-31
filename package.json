@@ -74,7 +74,7 @@
     "karma-junit-reporter": "^1.2.0",
     "protractor": "~5.4.0",
     "puppeteer": "^1.20.0",
-    "semantic-release": "^15.13.24",
+    "semantic-release": "^17.2.3",
     "semantic-release-cli": "^5.2.1",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
